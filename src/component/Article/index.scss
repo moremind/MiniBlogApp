@@ -1,0 +1,39 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/tag.scss";
+@import "~taro-ui/dist/style/components/divider.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+.article {
+  position: relative;
+  padding: 10Px;
+  margin: 0 auto;
+}
+// 缩略图
+.article-thumb {
+  position: relative;
+  height: 80Px;
+  width: 80Px;
+}
+
+// 文章内容
+.article-content {
+  float: left;
+  margin-left: 10Px;
+}
+
+.article-title {
+  margin-top: 5Px;
+}
+//文章标签
+.article-tag {
+  margin-top: 20Px;
+}
+
+.article-tag at-tag {
+  padding: 2Px;
+}
+.publish-date {
+  margin-left: 10Px;
+}
+
+
+

@@ -1,0 +1,27 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+.user-pic {
+  height:80Px;
+}
+
+.user-pic image {
+  border-radius: 40Px;
+}
+
+.user-avi-pic {
+  position: relative;
+  height: 80Px;
+  width: 80Px;
+}
+
+.user-info {
+  position: relative;
+  padding: 10Px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+}
+.username {
+  margin-top: 10Px;
+  font-weight: 500;
+  text-align: center;
+  font: 18Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
