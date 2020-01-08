@@ -42,23 +42,19 @@ export default class Article extends Component {
         <View className='at-row'>
           {/*图片*/}
           <View >
-            <Image className='article-thumb' src={"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png"}/>
+            <Image className='article-thumb' src='https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png'/>
           </View>
           <View className='article-content'>
             {/*标题*/}
             <View className='at-col article-title'>文章标题</View>
             {/*标签*/}
             <View className='article-tag'>
-              <span className='author'>
-                <AtTag>小喵咪</AtTag>
-              </span>
-              <span className='publish-date'>
-                <AtTag>2020年1月20日</AtTag>
-              </span>
+              <AtTag className='author'>小喵咪</AtTag>
+              <AtTag className='publish-date'>2020年1月20日</AtTag>
             </View>
           </View>
         </View>
-        <AtDivider height='16Px' lineColor='#ccc'/>
+        <AtDivider height='10Px' lineColor='#ccc' />
       </View>
 
     )

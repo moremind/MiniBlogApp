@@ -21,19 +21,42 @@
 }
 
 .article-title {
+  font-weight: 600;
   margin-top: 5Px;
+  font: 16Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 }
 //文章标签
 .article-tag {
+  display: inline-block;
   margin-top: 20Px;
 }
 
-.article-tag at-tag {
-  padding: 2Px;
+.author-view {
+  float: left;
 }
+
 .publish-date {
-  margin-left: 10Px;
+  float: left;
+  margin-left: 5Px;
 }
+
+
+//@media screen and (min-width: 320px) and (max-width: 1156px){
+//
+//  .site-bg-dl {
+//    position: fixed;
+//    height: 100%;
+//    width: 100%;
+//    z-index: 0;
+//    background-size: cover;
+//    background-repeat: no-repeat;
+//    background-attachment: fixed;
+//    background-size:100% 100%;
+//    -moz-background-size:100% 100%;
+//  }
+//}
+
+
 
 
 
