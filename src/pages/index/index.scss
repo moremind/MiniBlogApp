@@ -4,8 +4,46 @@
 @import "~taro-ui/dist/style/components/list.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
 @import "~taro-ui/dist/style/components/card.scss";
-
-page {
+.at-search-bar {
+  margin-bottom: 6Px;
+}
+.at-search-bar__input-cnt {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   width: 100%;
-  height: 100%;
+  height: 40PX;
+  background-color: #F7F7F7;
+  border-radius: 20PX;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.at-search-bar__placeholder-wrap {
+  height: 40Px;
+}
+
+.at-search-bar__input {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40PX !important;
+  padding: 0 37PX;
+  color: #000;
+  font-size: 14PX !important;
+  text-align: left;
+  background-color: transparent;
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.at-search-bar__clear {
+  height: 40Px;
 }

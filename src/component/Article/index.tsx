@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import {View, Image} from '@tarojs/components'
-import { AtTag, AtDivider } from 'taro-ui'
+import {View, Image, Text} from '@tarojs/components'
+import { AtIcon, AtDivider } from 'taro-ui'
 import './index.scss'
 
 export default class Article extends Component {
@@ -42,19 +42,25 @@ export default class Article extends Component {
         <View className='at-row'>
           {/*图片*/}
           <View >
-            <Image className='article-thumb' src='https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png'/>
+            <Image className='article-thumb' src={"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png"}/>
           </View>
           <View className='article-content'>
             {/*标题*/}
             <View className='at-col article-title'>文章标题</View>
             {/*标签*/}
             <View className='article-tag'>
-              <AtTag className='author'>小喵咪</AtTag>
-              <AtTag className='publish-date'>2020年1月20日</AtTag>
+              <View className='author-view'>
+                <View className='at-icon at-icon-user' />
+                <Text className='author'>小猫咪</Text>
+              </View>
+              <View className='publish-view'>
+                <View className='at-icon at-icon-calendar' />
+                <Text className='publish-date'>2020年1月2日</Text>
+              </View>
             </View>
           </View>
         </View>
-        <AtDivider height='10Px' lineColor='#ccc' />
+        <AtDivider height='16Px' lineColor='#ccc' />
       </View>
 
     )

@@ -2,61 +2,130 @@
 @import "~taro-ui/dist/style/components/tag.scss";
 @import "~taro-ui/dist/style/components/divider.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
-.article {
-  position: relative;
-  padding: 10Px;
-  margin: 0 auto;
+
+@media (max-width: 767Px) {
+  .article {
+    position: relative;
+    padding: 5Px;
+    margin: 0 auto;
+  }
+  // 缩略图
+  .article-thumb {
+    position: relative;
+    height: 80Px;
+    width: 80Px;
+  }
+  // 文章内容
+  .article-content {
+    float: left;
+    margin-left: 10Px;
+  }
+  .article-title {
+    margin-top: 5Px;
+    font: 18Px/1 "STFangsong",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  //文章标签
+  .article-tag {
+    margin-top: 20Px;
+    padding: 2Px;
+    display: flex;
+  }
+  .author, .publish-date {
+    margin-left: 2Px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font: 13Px/1 "STFangsong",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  }
+  .author-view, .publish-view {
+    display: inline-block;
+    text-align: center;
+  }
+  .author-view .at-icon, .publish-view .at-icon {
+    font-size: 13Px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    text-rendering: auto;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+  }
+  .publish-view {
+    margin-left: 10Px;
+  }
 }
-// 缩略图
-.article-thumb {
-  position: relative;
-  height: 80Px;
-  width: 80Px;
+
+@media (min-width: 768Px) and (max-width: 1024Px) {
+  .article {
+    position: relative;
+    padding: 5Px;
+    margin: 0 auto;
+  }
+  // 缩略图
+  .article-thumb {
+    position: relative;
+    height: 80Px;
+    width: 80Px;
+  }
+  // 文章内容
+  .article-content {
+    float: left;
+    margin-left: 10Px;
+  }
+  .article-title {
+    margin-top: 5Px;
+    font: 26Px/1 "STFangsong",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  //文章标签
+  .article-tag {
+    margin-top: 20Px;
+    padding: 2Px;
+    display: flex;
+  }
+  .author, .publish-date {
+    margin-left: 2Px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font: 15Px/1 "STFangsong",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  }
+  .author-view, .publish-view {
+    display: inline-block;
+    text-align: center;
+  }
+  .author-view .at-icon, .publish-view .at-icon {
+    font-size: 15Px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    text-rendering: auto;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+  }
+  .publish-view {
+    margin-left: 10Px;
+  }
 }
-
-// 文章内容
-.article-content {
-  float: left;
-  margin-left: 10Px;
-}
-
-.article-title {
-  font-weight: 600;
-  margin-top: 5Px;
-  font: 16Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-}
-//文章标签
-.article-tag {
-  display: inline-block;
-  margin-top: 20Px;
-}
-
-.author-view {
-  float: left;
-}
-
-.publish-date {
-  float: left;
-  margin-left: 5Px;
-}
-
-
-//@media screen and (min-width: 320px) and (max-width: 1156px){
-//
-//  .site-bg-dl {
-//    position: fixed;
-//    height: 100%;
-//    width: 100%;
-//    z-index: 0;
-//    background-size: cover;
-//    background-repeat: no-repeat;
-//    background-attachment: fixed;
-//    background-size:100% 100%;
-//    -moz-background-size:100% 100%;
-//  }
-//}
-
-
 
 
 

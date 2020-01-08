@@ -48,6 +48,10 @@ export default class Index extends Component {
         <View>
           {/*文章渲染列表*/}
           <Article></Article>
+          <Article></Article>
+          <Article></Article>
+          <Article></Article>
+
         </View>
       </View>
     )
