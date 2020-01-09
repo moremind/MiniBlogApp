@@ -13,82 +13,75 @@ import WebPng from '../../assets/pic/frontend1.png'
 import RecordPng from '../../assets/pic/book2.png'
 
 export default class Topics extends Component {
+  constructor() {
+    super();
+    this.state = {
+      // eslint-disable-next-line react/no-unused-state
+      dataList: [
+        {
+          image: JavaBasicPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
+          value: 'Java专题'
+        },
+        {
+          image: JvmPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
+          value: 'JVM专题'
+        },
+        {
+          image: JavaInterview,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
+          value: 'Java开发面试'
+        },
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
+        {
+          image: SpringPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
+          value: 'Spring框架'
+        },
+        {
+          image: SpringBootPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
+          value: 'SpringBoot模块'
+        },
+        {
+          image: SpringCloudPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png',
+          value: 'SpringCloud模块'
+        },
+        {
+          image: NetworkPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
+          value: '网络编程'
+        },
+        {
+          image: WebPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
+          value: 'Web编程'
+        },
+        {
+          image: RecordPng,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
+          value: '技术杂记'
+        }
+      ]
+    }
+  }
   config: Config = {
     navigationBarTitleText: '专题'
   };
+  static data  = {
 
-  componentWillMount () { }
+  };
 
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
+  onClickJavaBasic () {
+    console.log('------------------>')
+  }
 
   render () {
     return (
       <View className='topics-content'>
-        <AtGrid data={
-          [
-            {
-              image: JavaBasicPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
-              value: 'Java专题'
-            },
-            {
-              image: JvmPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
-              value: 'JVM专题'
-            },
-            {
-              image: JavaInterview,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
-              value: 'Java开发面试'
-            },
-
-            {
-              image: SpringPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
-              value: 'Spring框架'
-            },
-            {
-              image: SpringBootPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
-              value: 'SpringBoot模块'
-            },
-            {
-              image: SpringCloudPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png',
-              value: 'SpringCloud模块'
-            },
-            {
-              image: NetworkPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
-              value: '网络编程'
-            },
-            {
-              image: WebPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
-              value: 'Web编程'
-            },
-            {
-              image: RecordPng,
-              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
-              value: '技术杂记'
-            }
-          ]
-        }
-        />
+        <AtGrid onClick={"",this.state.dataList[1], this.onClickJavaBasic} data={this.state.dataList} />
       </View>
     )
   }
