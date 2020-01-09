@@ -1,6 +1,8 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import {CommonEvent} from "@tarojs/components/types/common";
+import {Item} from "taro-ui/@types/grid";
 
 export default class Index extends Component {
 
@@ -24,11 +26,13 @@ export default class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+  
+  onClick?: (item: Item, index: number, event: CommonEvent) => void
 
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <View>Hello world!</View>
       </View>
     )
   }
