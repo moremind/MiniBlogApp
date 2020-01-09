@@ -1,4 +1,28 @@
 @import "~taro-ui/dist/style/components/grid.scss";
-.topics-content {
-  margin-top: 30Px;
+
+@media (max-width: 767Px) {
+  .topics-content {
+    margin-top: 30Px;
+  }
+  .at-grid__flex .content-inner__img {
+    height: 50Px;
+    width: 50Px;
+  }
+
+  .at-grid__flex .content-inner__text {
+    font-size: 15Px;
+  }
+}
+
+@media (min-width: 768Px) and (max-width: 1024Px) {
+  .topics-content {
+    margin-top: 30Px;
+  }
+  .at-grid__flex .content-inner__img {
+    height: 50Px;
+    width: 50Px;
+  }
+  .at-grid__flex .content-inner__text {
+    font-size: 18Px;
+  }
 }

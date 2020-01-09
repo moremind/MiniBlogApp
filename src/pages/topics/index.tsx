@@ -2,6 +2,15 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { AtGrid } from "taro-ui"
 import './index.scss'
+import JavaBasicPng from '../../assets/pic/Java.jpg'
+import JvmPng from '../../assets/pic/jvm.png'
+import JavaInterview from '../../assets/pic/interview-bak.jpg'
+import SpringPng from '../../assets/pic/spring.png'
+import SpringBootPng from '../../assets/pic/springboot.jpg'
+import SpringCloudPng from '../../assets/pic/springcloud.png'
+import NetworkPng from '../../assets/pic/network1.png'
+import WebPng from '../../assets/pic/frontend1.png'
+import RecordPng from '../../assets/pic/book2.png'
 
 export default class Topics extends Component {
 
@@ -32,43 +41,54 @@ export default class Topics extends Component {
         <AtGrid data={
           [
             {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-              value: '领取中心'
+              image: JavaBasicPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
+              value: 'Java专题'
             },
             {
-              image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
-              value: '找折扣'
+              image: JvmPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
+              value: 'JVM专题'
             },
             {
-              image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
-              value: '领会员'
+              image: JavaInterview,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
+              value: 'Java开发面试'
+            },
+
+            {
+              image: SpringPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
+              value: 'Spring框架'
             },
             {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-              value: '新品首发'
+              image: SpringBootPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
+              value: 'SpringBoot模块'
             },
             {
-              image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-              value: '领京豆'
+              image: SpringCloudPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png',
+              value: 'SpringCloud模块'
             },
             {
-              image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
-              value: '手机馆'
+              image: NetworkPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
+              value: '网络编程'
             },
             {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-              value: '新品首发'
+              image: WebPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
+              value: 'Web编程'
             },
             {
-              image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-              value: '领京豆'
-            },
-            {
-              image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
-              value: '手机馆'
+              image: RecordPng,
+              // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
+              value: '技术杂记'
             }
           ]
-        } />
+        }
+        />
       </View>
     )
   }
