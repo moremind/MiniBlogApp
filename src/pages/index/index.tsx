@@ -35,6 +35,12 @@ export default class Index extends Component {
   onActionClick () {
     console.log('开始搜索')
   }
+  onClickArticle () {
+    console.log("ssss");
+    Taro.navigateTo({
+      url: '/pages/ChildPages/ArticleDetails/index'
+    })
+  }
   render () {
     return (
       <View>
@@ -47,11 +53,7 @@ export default class Index extends Component {
         />
         <View>
           {/*文章渲染列表*/}
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-
+          <Article onClick={this.onClickArticle}></Article>
         </View>
       </View>
     )

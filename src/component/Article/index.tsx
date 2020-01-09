@@ -1,43 +1,30 @@
-import Taro, { Component, Config } from '@tarojs/taro'
+import Taro, {Component, Config} from '@tarojs/taro'
 import {View, Image, Text} from '@tarojs/components'
-import { AtIcon, AtDivider } from 'taro-ui'
+import { AtDivider } from 'taro-ui'
 import './index.scss'
+// eslint-disable-next-line import/first
+import PropTypes from 'prop-types';
 
 export default class Article extends Component {
-
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '文章详情'
+  static options = {
+    addGlobalClass: true
+  };
+  static defaultProps = {
+    onClick: () => {},
+  };
+  static propTypes = {
+    onClick: PropTypes.func,
   };
   constructor () {
+    // eslint-disable-next-line prefer-rest-params
     super(...arguments)
     this.state = {
-      thumb: '',
-      articleTitle: '',
-      articleAuthor: '',
-      articleDate: ''
     }
   }
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   render () {
     return (
-      <View className='article'>
+      <View className='article' onClick={this.props.onClick}>
         {/*文章内容*/}
         <View className='at-row'>
           {/*图片*/}
