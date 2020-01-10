@@ -25,7 +25,8 @@ class App extends Component {
       'pages/index/index',
       'pages/mine/index',
       'pages/topics/index',
-      'pages/ChildPages/ArticleDetails/index'
+      'pages/ChildPages/ArticleDetails/index',
+      'pages/ChildPages/JavaBasicPage/index'
     ],
     tabBar: {
       backgroundColor: "#fff",

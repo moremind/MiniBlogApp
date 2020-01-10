@@ -19,47 +19,64 @@ export default class Topics extends Component {
       // eslint-disable-next-line react/no-unused-state
       dataList: [
         {
+          index: 0,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: JavaBasicPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
           value: 'Java专题'
         },
         {
+          index: 1,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: JvmPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
           value: 'JVM专题'
         },
         {
+          index: 2,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: JavaInterview,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
           value: 'Java开发面试'
         },
-
         {
+          index: 3,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: SpringPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
           value: 'Spring框架'
         },
         {
+          index: 4,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: SpringBootPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
           value: 'SpringBoot模块'
         },
         {
+          index: 5,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: SpringCloudPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png',
           value: 'SpringCloud模块'
         },
         {
+          index: 6,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: NetworkPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
           value: '网络编程'
         },
         {
+          index: 7,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: WebPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
           value: 'Web编程'
         },
         {
+          index: 8,
+          url: '/pages/ChildPages/JavaBasicPage/index',
           image: RecordPng,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
           value: '技术杂记'
@@ -70,18 +87,24 @@ export default class Topics extends Component {
   config: Config = {
     navigationBarTitleText: '专题'
   };
-  static data  = {
 
+  handlerClick = (value, index, ) => {
+    console.log(value, index)
+    if (value.index === index) {
+      Taro.navigateTo({
+        url: value.url + '?pageIndex=' + index + '&value=' + value.value
+      }).then(
+
+      );
+    } else {
+      console.log("error pages")
+    }
   };
-
-  onClickJavaBasic () {
-    console.log('------------------>')
-  }
 
   render () {
     return (
       <View className='topics-content'>
-        <AtGrid onClick={"",this.state.dataList[1], this.onClickJavaBasic} data={this.state.dataList} />
+        <AtGrid onClick={this.handlerClick} data={this.state.dataList} />
       </View>
     )
   }
