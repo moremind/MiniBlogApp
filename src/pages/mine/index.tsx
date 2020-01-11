@@ -28,23 +28,60 @@ export default class Mine extends Component {
 
   componentDidHide () { }
 
+  onClickBrowsePage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/BrowsePage/index' + '?TitleText=浏览记录' + '&userId=' + '1'
+    }).then(function () {
+      console.log("into Browse Page")
+    });
+  }
+  onClickFavoritePage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/FavoritePage/index' + '?TitleText=我的收藏' + '&userId=' + '1'
+    }).then(function () {
+    });
+  }
+  onClickMyLikePage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/MyLikePage/index' + '?TitleText=我的点赞' + '&userId=' + '1'
+    }).then(function () {
+    });
+  }
+  onClickAboutPage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/AboutPage/index' + '?TitleText=关于' + '&userId=' + '1'
+    }).then(function () {
+    });
+  }
+  onClickCopyrightPage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/CopyrightPage/index' + '?TitleText=版权说明' + '&userId=' + '1'
+    }).then(function () {
+    });
+  }
+  onClickIssuePage () {
+    Taro.navigateTo({
+      url: '/pages/ChildPages/IssuePage/index' + '?TitleText=意见与反馈' + '&userId=' + '1'
+    }).then(function () {
+    });
+  }
   render () {
     return (
       <View className='mine-index'>
         <UserInfoBar></UserInfoBar>
         <View className='about-reader'>
           <AtList>
-            <AtListItem title='浏览记录' arrow='right' iconInfo={{ size: 24, color: '#F5C534', value: 'clock' }} />
-            <AtListItem title='我的星标' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'star' }} />
-            <AtListItem title='点赞好文' arrow='right' iconInfo={{ size: 25, color: '#FF4959', value: 'heart-2' }} />
+            <AtListItem onClick={this.onClickBrowsePage} title='浏览记录' arrow='right' iconInfo={{ size: 24, color: '#F5C534', value: 'clock' }} />
+            <AtListItem onClick={this.onClickFavoritePage} title='我的收藏' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'star' }} />
+            <AtListItem onClick={this.onClickMyLikePage} title='点赞好文' arrow='right' iconInfo={{ size: 25, color: '#FF4959', value: 'heart-2' }} />
             {/*<AtListItem title='我的xx' arrow='right' extraText='详细信息' iconInfo={{ size: 25, color: '#FF4949', value: 'bookmark' }} />*/}
           </AtList>
         </View>
         <View className='faq'>
           <AtList>
-            <AtListItem title='关于' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'help' }} />
-            <AtListItem title='版权说明' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'alert-circle' }} />
-            <AtListItem title='意见与建议' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'message' }} />
+            <AtListItem onClick={this.onClickAboutPage} title='关于' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'help' }} />
+            <AtListItem onClick={this.onClickCopyrightPage} title='版权说明' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'alert-circle' }} />
+            <AtListItem onClick={this.onClickIssuePage} title='意见与建议' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'message' }} />
           </AtList>
         </View>
       </View>

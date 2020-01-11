@@ -4,8 +4,16 @@ import './index.scss'
 
 export default class Index extends Component {
   config: Config = {
-    navigationBarTitleText: '文章详情'
   };
+
+  componentWillMount () {
+    Taro.setNavigationBarTitle({
+      title: this.$router.params.articleName,
+      success () {
+        console.log("加载页面业务");
+      }
+    });
+  }
 
   //todo 将markdown文章转为html显示出来
   render () {

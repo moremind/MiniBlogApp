@@ -1,11 +1,9 @@
-// @ts-ignore
 import Taro, { Component, Config } from '@tarojs/taro'
 import './index.scss'
 // eslint-disable-next-line import/first
-// @ts-ignore
-import { AtSearchBar, AtList, AtListItem, AtCard  } from 'taro-ui'
+import { AtSearchBar } from 'taro-ui'
+// eslint-disable-next-line import/first
 import { View } from '@tarojs/components'
-// @ts-ignore
 import Article from "../../component/Article";
 
 
@@ -22,7 +20,8 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   };
   constructor () {
-    super(...arguments)
+    // eslint-disable-next-line prefer-rest-params
+    super(...arguments);
     this.state = {
       value: ''
     }
@@ -38,8 +37,9 @@ export default class Index extends Component {
   onClickArticle () {
     console.log("ssss");
     Taro.navigateTo({
-      url: '/pages/ChildPages/ArticleDetails/index'
-    })
+      url: '/pages/ChildPages/ArticleDetails/index' + '?articleName=' + '哈哈哈'
+    }).then(function () {
+    });
   }
   render () {
     return (
