@@ -25,6 +25,7 @@ class App extends Component {
       'pages/index/index',
       'pages/mine/index',
       'pages/topics/index',
+      'pages/resources/index',
       'pages/ChildPages/ArticleDetails/index',
       'pages/ChildPages/JavaBasicPage/index',
       'pages/ChildPages/BrowsePage/index',
@@ -52,12 +53,12 @@ class App extends Component {
           iconPath: "assets/icon/topic.png",
           selectedIconPath: "assets/icon/topic-selected.png"
         },
-        // {
-        //   pagePath: "pages/resources/index",
-        //   text: "主题",
-        //   iconPath: "assets/icon/topic.png",
-        //   selectedIconPath: "assets/icon/topic-selected.png"
-        // },
+        {
+          pagePath: "pages/resources/index",
+          text: "主题",
+          iconPath: "assets/icon/topic.png",
+          selectedIconPath: "assets/icon/topic-selected.png"
+        },
         {
           pagePath: "pages/mine/index",
           text: "我",

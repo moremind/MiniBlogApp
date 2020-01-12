@@ -10,14 +10,14 @@ export default class Article extends Component {
     addGlobalClass: true
   };
   static defaultProps = {
-    onClick: () => {},
+    onClick: () => { },
   };
   static propTypes = {
     onClick: PropTypes.func,
   };
   constructor () {
     // eslint-disable-next-line prefer-rest-params
-    super(...arguments)
+    super(...arguments);
     this.state = {
     }
   }

@@ -1,34 +1,31 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
+import Taro, { Component } from '@tarojs/taro'
+import { View } from '@tarojs/components'
+
+import WxParse from '../../component/wxParse/wxParse.js'
+
+import Wx from '../../component/wxParse/wxParse.wxml
 
 export default class Index extends Component {
+  // config = {
+  //   navigationBarBackgroundColor: '#ffffff',
+  //   navigationBarTextStyle: 'black',
+  //   navigationBarTitleText: 'WxParse 使用示例',
+  //   backgroundColor: '#eeeeee',
+  //   backgroundTextStyle: 'light'
+  // }
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '首页'
+  componentDidMount() {
+    const article = '<div style="color: red">我是HTML代码</div><h2>标题2</h2><img src="http://192.168.122.142:80/public/1904/26/public-1904-26-c15d9fb7-0ad5-40a9-b845-6d085d6c0f30.jpg">'
+    WxParse.wxParse('article', 'html', article, this.$scope, 5)
   }
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
+  render() {
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+      <View>
+        <import src="https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        <import src='../../component/wxParse/wxParse.wxml'></import>
+        <template is='wxParse' data='{{wxParseData:article.nodes}}' />
       </View>
     )
   }
