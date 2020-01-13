@@ -8,7 +8,6 @@ import Html2Wxml from '../../../component/html2wxml/html2wxml'
 // eslint-disable-next-line import/first
 import Markdown from 'markdown-it'
 
-
 export default class Index extends Component {
 
   /**
@@ -21,6 +20,13 @@ export default class Index extends Component {
   config: Config = {
     // navigationBarTitleText: '首页'
   };
+  constructor () {
+    // eslint-disable-next-line prefer-rest-params
+    super(...arguments);
+    this.state = {
+      article: []
+    }
+  }
   componentWillMount () {
     Taro.setNavigationBarTitle({
       title: this.$router.params.TitleText,
@@ -29,66 +35,109 @@ export default class Index extends Component {
       }
     }).then(function () {
     });
+    // const that = this;
+
+    // await Taro.request({
+    //   url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
+    // }).then(function (response) {
+    //   console.log("request success");
+    //   that.setState({
+    //     article: JSON.stringify(response.data)
+    //   });
+    //   console.log(JSON.stringify(response.data))
+    // });
+
+    // this.state.article = this.getData();
   }
 
   componentDidMount() {
-    var md = new Markdown();
-    const article = md.render('# Marked in browser\n\nRendered by **marked**. ```java \n' +
-      '\tpublic static void main(String[] args) {\n' +
-      '        SpringApplication.run(JavanorthappApplication.class, args);\n' +
-      '    }\n' +
-      '```');
-    Html2Wxml.html2wxml('article', article, this.$scope, 5);
-    // Html2Wxml.html2wxml('article', 'html', article, this.$scope);
-    WxParse.wxParse('article', 'html', article, this.$scope, 5)
+    var that = this;
+    let p = new Promise(function (resolve, reject) {
+      Taro.request({
+        url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
+        success: function (res) {
+          // console.log(JSON.stringify(res.data));
+          resolve({data: JSON.stringify(res.data)});
+          // return JSON.stringify(res.data).toString();
+        },
+        fail: function (res) {
+          reject(res);
+        }
+      });
+    });
+    p.then(function (data) {
+
+      console.log("--------------" + JSON.stringify(data))
+      console.log(data.data)
+    });
+
+
+    console.log("---111>" + this.state.article)
+    // var md = new Markdown();
+    // const article = md.render('# Marked in browser\n\nRendered by **marked**. ```java \n' +
+    //   '\tpublic static void main(String[] args) {\n' +
+    //   '        SpringApplication.run(JavanorthappApplication.class, args);\n' +
+    //   '    }\n' +
+    //   '```');
+    console.log(this.state.article)
+    // Html2Wxml.html2wxml('article', article, this.$scope, 5);
+    // // Html2Wxml.html2wxml('article', 'html', article, this.$scope);
+    // WxParse.wxParse('article', 'html', article, this.$scope, 5)
+
   }
 
 
-  componentWillUnmount () { }
+  componentWillUnmount () {
 
-  componentDidShow () { }
+  }
+
+  componentDidShow () {
+
+    console.log("----->>>>111" + this.state.article)
+  }
 
   componentDidHide () { }
 
+  getData () {
+    return new Promise(function (resolve, reject) {
+      return Taro.request({
+        url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
+        success: function (res) {
+          // console.log(JSON.stringify(res.data));
+          resolve({data: JSON.stringify(res.data)});
+          // return JSON.stringify(res.data).toString();
+        }
+      });
+    });
+
+  }
+
 
   showPage () {
-    var md = new Markdown();
-    console.log(md.render(
-      ```java
-    	  /**
-    	    * The throwable that caused this throwable to get thrown, or null if this
-    	    * throwable was not caused by another throwable, or if the causative
-    	    * throwable is unknown.  If this field is equal to this throwable itself,
-    	    * it indicates that the cause of this throwable has not yet been
-    	    * initialized.
-    	    *
-    	    * @serial
-    	    * @since 1.4
-    	    */
-    	      private Throwable cause = this;
-    	  ```
-    ))
-    console.log(Marked('# Marked in browser\n\nRendered by **marked**. ```java\n' +
-      '\tpublic static void main(String[] args) {\n' +
-      '        SpringApplication.run(JavanorthappApplication.class, args);\n' +
-      '    }\n' +
-      '```'));
+    return this.state.article
+    // var md = new Markdown();
+    // console.log(md.render(this.getData()));
+    // console.log(Marked('# Marked in browser\n\nRendered by **marked**. ```java\n' +
+    //   '\tpublic static void main(String[] args) {\n' +
+    //   '        SpringApplication.run(JavanorthappApplication.class, args);\n' +
+    //   '    }\n' +
+    //   '```'));
+    // return md.render(this.getData());
 
-    return Marked('# Marked in browser\n\nRendered by **marked**. ```\n' +
-      '\tpublic static void main(String[] args) {\n' +
-      '        SpringApplication.run(JavanorthappApplication.class, args);\n' +
-      '    }\n' +
-      '```');
+    // return Marked(this.getData());
     // return md.render('# Marked in browser\n\nRendered by **marked**.')
   }
 
   render () {
-    return (
+    return this.state.article && (
       <View>
-        <import src='../../../component/wxParse/wxParse.wxml' />
-        <template is='wxParse' data='{{wxParseData:article.nodes}}'/>
-        <import src="../../../component/html2wxml/html2wxml.wxml" />
-        <template is='html2wxml' data='{{wxmlData:article}}' />
+        <View>{this.state.article}</View>
+        {/*<import src='../../../component/wxParse/wxParse.wxml' />*/}
+        {/*<template is='wxParse' data='{{wxParseData:article.nodes}}'/>*/}
+        {/*<import src="../../../component/html2wxml/html2wxml.wxml" />*/}
+        {/*<template is='html2wxml' data='{{wxmlData:article}}' />*/}
+        <RichText nodes={'article'}>{this.state.article}</RichText>
+        <RichText nodes={'data'}>{this.showPage()}</RichText>
       </View>
     )
   }
