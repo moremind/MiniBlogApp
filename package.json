@@ -45,6 +45,7 @@
     "marked": "^0.8.0",
     "nerv-devtools": "^1.5.5",
     "nervjs": "^1.5.5",
+    "qs": "^6.9.1",
     "taro-ui": "^2.2.4"
   },
   "devDependencies": {
