@@ -835,6 +835,13 @@
     js-levenshtein "^1.1.3"
     semver "^5.5.0"
 
+"@babel/runtime@^7.0.0":
+  version "7.8.3"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.8.3.tgz#0811944f73a6c926bb2ad35e918dcc1bfab279f1"
+  integrity sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.7"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
@@ -996,6 +1003,24 @@
     node-sass "^4.12.0"
     scss-bundle "^2.5.1"
 
+"@tarojs/redux-h5@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@tarojs/redux-h5/-/redux-h5-2.0.1.tgz#497d3104dc8acb4423a939a5c58770df0181218a"
+  integrity sha512-VKnYU/N+Crk+BkDEYHPIjB876CxsXxRZn9qRd8188A1crW6rTjldL1Vj30Mi/j+F827LmGJmgxvtcvcZPRQIqA==
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.2.4"
+    loose-envify "^1.1.0"
+    prop-types "^15.6.1"
+
+"@tarojs/redux@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@tarojs/redux/-/redux-2.0.1.tgz#8d3cda747c9b49d1eea8a6fc6c83c3d0b02b2ce4"
+  integrity sha512-tVT9pURVuztNy4WeoDycgwrPO0nUxIu9Dwo8vYdeX15rjtHgLOJJaYTYj76Rp6ZG8fisKcfV2MX4vJJyAculUg==
+  dependencies:
+    "@tarojs/taro" "2.0.1"
+    "@tarojs/utils" "2.0.1"
+
 "@tarojs/router@2.0.0-beta.13":
   version "2.0.0-beta.13"
   resolved "https://registry.npmjs.org/@tarojs/router/-/router-2.0.0-beta.13.tgz#1b196b22bc072663b3896ef0cf1882e1c6bc34dd"
@@ -1116,6 +1141,13 @@
   dependencies:
     "@tarojs/utils" "2.0.0-beta.13"
 
+"@tarojs/taro@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@tarojs/taro/-/taro-2.0.1.tgz#abde7b5951ad90812e9e67c396d65a37a3ca55f4"
+  integrity sha512-++A9+g5pfb/gbVMKadXUKhPch3A/GmXuknOf52DEXwYyF7CLKVKXqmRnzqX3Hev/djpw2dCDBPM1Z7GG+Mmnww==
+  dependencies:
+    "@tarojs/utils" "2.0.1"
+
 "@tarojs/transformer-wx@2.0.0-beta.13":
   version "2.0.0-beta.13"
   resolved "https://registry.npmjs.org/@tarojs/transformer-wx/-/transformer-wx-2.0.0-beta.13.tgz#04937cf1686118c76712e67de94d34614c63c58f"
@@ -1151,6 +1183,11 @@
   version "2.0.0-beta.13"
   resolved "https://registry.npmjs.org/@tarojs/utils/-/utils-2.0.0-beta.13.tgz#a3b9b4a36ab71ac4e2a3fddd96f4fb006862ea62"
   integrity sha512-R/i14e/qFMc1zJyj/kEDtN3ig5GSO5l0NjCXfuIRWZaLOW+j9Ld+/qgoub0CoKZJ0STFdoZEM9yUfcbbMUX9HA==
+
+"@tarojs/utils@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@tarojs/utils/-/utils-2.0.1.tgz#54dbee464a0bff91b79556b5bfbf12dede0f4064"
+  integrity sha512-zB4WbSyP/k/7ncP2GpP43nrmsiXyCyS4BkWb+6iHjIR/uWvF4STj9mUOqUyOKZ9/H4f4tYUIs30WG9i/8VV0HQ==
 
 "@tarojs/webpack-runner@2.0.0-beta.13":
   version "2.0.0-beta.13"
@@ -4048,6 +4085,11 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
+deep-diff@^0.3.5:
+  version "0.3.8"
+  resolved "https://registry.npmjs.org/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
+  integrity sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ=
+
 deep-equal@^1.0.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/deep-equal/-/deep-equal-1.1.1.tgz#b5c98c942ceffaf7cb051e24e1434a25a2e6076a"
@@ -4321,6 +4363,26 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
+
+dva-core@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/dva-core/-/dva-core-2.0.2.tgz#7166ef879e335db018b942c9c0f2e1a5543851a0"
+  integrity sha512-EGYjkjx6/9R3ek1L37cb6joDCLwbPrqRM56UrFqKc5yltx5UDAK3soa/Ug4j4nlGTN5W8T1Fz0qJlP3R7Jm0Hg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    flatten "^1.0.2"
+    global "^4.3.2"
+    invariant "^2.2.1"
+    is-plain-object "^2.0.3"
+    redux-saga "^0.16.0"
+    warning "^3.0.0"
+
+dva-loading@^3.0.20:
+  version "3.0.20"
+  resolved "https://registry.npmjs.org/dva-loading/-/dva-loading-3.0.20.tgz#348a0814e0091a80d6f608b51c3e3b92e3883c8d"
+  integrity sha512-U9Na3Y2fLnpL+jBKv/C2pi3T2MbdezZLdGIleZs1bNDnkiPLuQ2btDldbbCFeidGlE6WOHGwSTsn32q4aL72Jg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -5152,6 +5214,11 @@ flatted@^2.0.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
+flatten@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
+  integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -5420,7 +5487,7 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, gl
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-global@^4.3.0:
+global@^4.3.0, global@^4.3.2:
   version "4.4.0"
   resolved "https://registry.npmjs.org/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
   integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
@@ -5619,6 +5686,11 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@^2.5.0:
+  version "2.5.5"
+  resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -5963,7 +6035,7 @@ intersection-observer@^0.7.0:
   resolved "https://registry.npmjs.org/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
   integrity sha512-Id0Fij0HsB/vKWGeBe9PxeY45ttRiBmhFyyt/geBdDHBYNctMRTE3dC1U3ujzz3lap+hVXlEcVaB56kZP/eEUg==
 
-invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.2, invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -6847,7 +6919,7 @@ longest-streak@^2.0.1:
   resolved "https://registry.npmjs.org/longest-streak/-/longest-streak-2.0.3.tgz#3de7a3f47ee18e9074ded8575b5c091f5d0a4105"
   integrity sha512-9lz5IVdpwsKLMzQi0MQ+oD9EA0mIGcWYP7jXMTZVXP8D42PwuAk+M/HBFYQoxt1G5OR8m7aSIgb1UymfWGBWEw==
 
-loose-envify@^1.0.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -8901,6 +8973,23 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
+redux-logger@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.npmjs.org/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
+  dependencies:
+    deep-diff "^0.3.5"
+
+redux-saga@^0.16.0:
+  version "0.16.2"
+  resolved "https://registry.npmjs.org/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
+  integrity sha512-iIjKnRThI5sKPEASpUvySemjzwqwI13e3qP7oLub+FycCRDysLSAOwt958niZW6LhxfmS6Qm1BzbU70w/Koc4w==
+
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
+
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
   resolved "https://registry.npmjs.org/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -10877,6 +10966,13 @@ warning@4.0.2:
   version "4.0.2"
   resolved "https://registry.npmjs.org/warning/-/warning-4.0.2.tgz#aa6876480872116fa3e11d434b0d0d8d91e44607"
   integrity sha512-wbTp09q/9C+jJn4KKJfJfoS6VleK/Dti0yqWSm6KMvJ4MRCXFQNapHuJXutJIrWV0Cf4AhTdeIe4qdKHR1+Hug==
+  dependencies:
+    loose-envify "^1.0.0"
+
+warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
   dependencies:
     loose-envify "^1.0.0"
 

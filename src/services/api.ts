@@ -8,6 +8,7 @@
 
 import Taro from '@tarojs/taro'
 import { HTTP_STATUS } from './config'
+// eslint-disable-next-line import/first
 import qs from 'qs'
 
 /**
