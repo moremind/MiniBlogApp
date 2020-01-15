@@ -5,7 +5,7 @@
  * @date: 2020年1月14日
  * @licence: MIT hirCodd
  */
-// @ts-ignore
+
 import about from './about'
 
 export default [

@@ -1,5 +1,5 @@
 // 测试请求about页面
-import Service from '../services/index'
+import * as ApiService from '../services/index'
 
 export default {
   namespace: 'about',
@@ -13,8 +13,14 @@ export default {
   },
   effects: {
     //dva中是action的处理器，用于处理异步操作
-    *load ({call}) {
-      // let { data } = yield call
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+    *load({ payload },{select, call, put}){
+      const { data } = yield call(ApiService.getMarkDown(), payload);
+      console.log(data);
+      yield put({
+        type: 'save',
+        payload: {data}
+      })
     }
   }
 }
