@@ -2,20 +2,20 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import {View, Text, RichText, Button} from '@tarojs/components'
 import './index.scss'
 // eslint-disable-next-line @typescript-eslint/no-var-requires,import/first
-import Marked from 'marked'
-import WxParse from '../../../component/wxParse/wxParse.js'
-import Html2Wxml from '../../../component/html2wxml/html2wxml'
-// eslint-disable-next-line import/first
-import Markdown from 'markdown-it'
-import {connect} from "@tarojs/redux";
-import about from "../../../models/about";
+// import Marked from 'marked'
+// import WxParse from '../../../component/wxParse/wxParse.js'
+// import Html2Wxml from '../../../component/html2wxml/html2wxml'
+// // eslint-disable-next-line import/first
+// import Markdown from 'markdown-it'
+// import {connect} from "@tarojs/redux";
+// import about from "../../../models/about";
 
 
 // @ts-ignore
-@connect(({about}) => ({
-  ...about,
-  article: about.effects["about/load"],
-}))
+// @connect(({about}) => ({
+//   ...about,
+//   article: about.effects["about/load"],
+// }))
 export default class Index extends Component {
 
   /**
@@ -59,10 +59,10 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch({
-      type: 'about/load',
-      payload: {}
-    })
+    // this.props.dispatch({
+    //   type: 'about/load',
+    //   payload: {}
+    // })
     // dispatch
     // var that = this;
     // let p = new Promise(function (resolve, reject) {

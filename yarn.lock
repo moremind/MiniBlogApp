@@ -930,6 +930,14 @@
   resolved "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@tarojs/async-await@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-2.0.1.tgz#5c8509b2319c5331d34c73fbcd23e8502f0c3ce7"
+  integrity sha512-sH4nk8/CrQCX+A63RbymMkio4dBDFwOWmXy4QMLC8UGJPVCU7ieilan0zhvA7J4wjh7SyfG4Q1RXUvR7RmY9Fg==
+  dependencies:
+    promise-polyfill "^7.1.2"
+    regenerator-runtime "^0.11.1"
+
 "@tarojs/components-qa@2.0.0-beta.13":
   version "2.0.0-beta.13"
   resolved "https://registry.npmjs.org/@tarojs/components-qa/-/components-qa-2.0.0-beta.13.tgz#1e1560067f6f571f323b4ef5129fc3647bc889d6"
@@ -1005,7 +1013,7 @@
 
 "@tarojs/redux-h5@^2.0.1":
   version "2.0.1"
-  resolved "https://registry.npmjs.org/@tarojs/redux-h5/-/redux-h5-2.0.1.tgz#497d3104dc8acb4423a939a5c58770df0181218a"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux-h5/-/redux-h5-2.0.1.tgz#497d3104dc8acb4423a939a5c58770df0181218a"
   integrity sha512-VKnYU/N+Crk+BkDEYHPIjB876CxsXxRZn9qRd8188A1crW6rTjldL1Vj30Mi/j+F827LmGJmgxvtcvcZPRQIqA==
   dependencies:
     hoist-non-react-statics "^2.5.0"
@@ -1015,7 +1023,7 @@
 
 "@tarojs/redux@^2.0.1":
   version "2.0.1"
-  resolved "https://registry.npmjs.org/@tarojs/redux/-/redux-2.0.1.tgz#8d3cda747c9b49d1eea8a6fc6c83c3d0b02b2ce4"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux/-/redux-2.0.1.tgz#8d3cda747c9b49d1eea8a6fc6c83c3d0b02b2ce4"
   integrity sha512-tVT9pURVuztNy4WeoDycgwrPO0nUxIu9Dwo8vYdeX15rjtHgLOJJaYTYj76Rp6ZG8fisKcfV2MX4vJJyAculUg==
   dependencies:
     "@tarojs/taro" "2.0.1"
@@ -2756,6 +2764,13 @@ babel-plugin-transform-regenerator@^6.22.0:
   integrity sha1-4HA2lvveJ/Cj78rPi03KL3s6jy8=
   dependencies:
     regenerator-transform "^0.10.0"
+
+babel-plugin-transform-runtime@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  integrity sha1-iEkNRGUC6puOfvsP4J7E2ZR5se4=
+  dependencies:
+    babel-runtime "^6.22.0"
 
 babel-plugin-transform-strict-mode@^6.24.1:
   version "6.24.1"
@@ -8581,6 +8596,11 @@ promise-inflight@^1.0.1:
   resolved "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
+promise-polyfill@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-7.1.2.tgz#ab05301d8c28536301622d69227632269a70ca3b"
+  integrity sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==
+
 promise@^7.1.1:
   version "7.3.1"
   resolved "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
@@ -8975,7 +8995,7 @@ redent@^2.0.0:
 
 redux-logger@^3.0.6:
   version "3.0.6"
-  resolved "https://registry.npmjs.org/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
   integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
   dependencies:
     deep-diff "^0.3.5"
@@ -8987,8 +9007,16 @@ redux-saga@^0.16.0:
 
 redux-thunk@^2.3.0:
   version "2.3.0"
-  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
+
+redux@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
+  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
 
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
@@ -9002,7 +9030,7 @@ regenerate@^1.2.1, regenerate@^1.4.0:
   resolved "https://registry.npmjs.org/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
 
-regenerator-runtime@^0.11.0:
+regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
@@ -10273,6 +10301,11 @@ swiper@4.4.2:
   dependencies:
     dom7 "^2.1.2"
     ssr-window "^1.0.1"
+
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
 table@^4.0.1:
   version "4.0.3"

@@ -6,7 +6,6 @@ let app, store, dispatch, registered;
 
 function createApp(options?: any) {
   const { models } = options;
-  // 开发环境打印日志
   if (process.env.NODE_ENV === 'development') {
     options.onAction = [createLogger()]
   }
@@ -17,6 +16,9 @@ function createApp(options?: any) {
   if (!registered) models.forEach((model) => app.model(model));
   registered = true;
   app.start();
+
+  store = app._store;
+  app.getStore = () => store;
 
   dispatch = store.dispatch;
   app.dispatch = dispatch;
@@ -29,5 +31,3 @@ export default {
     return app.dispatch;
   }
 }
-
-

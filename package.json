@@ -29,6 +29,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@tarojs/async-await": "^2.0.1",
     "@tarojs/components": "2.0.0-beta.13",
     "@tarojs/components-qa": "2.0.0-beta.13",
     "@tarojs/redux": "^2.0.1",
@@ -43,6 +44,8 @@
     "@tarojs/taro-swan": "2.0.0-beta.13",
     "@tarojs/taro-tt": "2.0.0-beta.13",
     "@tarojs/taro-weapp": "2.0.0-beta.13",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "dva-core": "^2.0.2",
     "dva-loading": "^3.0.20",
     "markdown-it": "^10.0.0",
@@ -50,6 +53,7 @@
     "nerv-devtools": "^1.5.5",
     "nervjs": "^1.5.5",
     "qs": "^6.9.1",
+    "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "taro-ui": "^2.2.4"
