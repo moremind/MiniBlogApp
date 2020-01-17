@@ -19,6 +19,7 @@ import qs from 'qs'
  */
 function checkStatus(response, resolve, reject) {
   if (response.statusCode >= 200 && response.statusCode < 300) {
+    console.log("000000-------------->" + JSON.stringify(response.data));
     resolve(response.data)
   } else {
     const message = HTTP_STATUS[response.statusCode] || `ERROR CODE: ${response.statusCode}`;
@@ -53,6 +54,7 @@ export default {
    */
   request(options: any, method?: string) {
     const { url } = options;
+    console.log("----->" + url);
     return new Promise(function (resolve, reject) {
       Taro.request({
         ...options,

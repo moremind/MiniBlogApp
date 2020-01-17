@@ -7,15 +7,13 @@ import './index.scss'
 // import Html2Wxml from '../../../component/html2wxml/html2wxml'
 // // eslint-disable-next-line import/first
 // import Markdown from 'markdown-it'
-// import {connect} from "@tarojs/redux";
+import {connect} from '@tarojs/redux';
 // import about from "../../../models/about";
 
-
 // @ts-ignore
-// @connect(({about}) => ({
-//   ...about,
-//   article: about.effects["about/load"],
-// }))
+@connect(({ about }) => ({
+  about
+}))
 export default class Index extends Component {
 
   /**
@@ -28,9 +26,9 @@ export default class Index extends Component {
   config: Config = {
     // navigationBarTitleText: '首页'
   };
-  constructor () {
+  constructor (props) {
     // eslint-disable-next-line prefer-rest-params
-    super(...arguments);
+    super(props);
     this.state = {
       article: []
     }
@@ -59,6 +57,11 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
+    this.props.dispatch({
+      type: 'about/load',
+      payload: ''
+    })
+    console.log(this.props.about.article.article)
     // this.props.dispatch({
     //   type: 'about/load',
     //   payload: {}
@@ -144,7 +147,8 @@ export default class Index extends Component {
   render () {
     return (
       <View>
-        <Button>测试按钮</Button>
+        <Button>测试按钮1</Button>
+        <View>{this.props.about.article.article}</View>
         {/*<View>{this.state.article}</View>*/}
         {/*<import src='../../../component/wxParse/wxParse.wxml' />*/}
         {/*<template is='wxParse' data='{{wxParseData:article.nodes}}'/>*/}
