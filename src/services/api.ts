@@ -17,15 +17,14 @@ import qs from 'qs'
  * @param resolve
  * @param reject
  */
-function checkStatus(response, resolve, reject) {
+function checkStatus(response) {
   if (response.statusCode >= 200 && response.statusCode < 300) {
-    console.log("000000-------------->" + JSON.stringify(response.data));
-    resolve(response.data)
+    return response
   } else {
     const message = HTTP_STATUS[response.statusCode] || `ERROR CODE: ${response.statusCode}`;
     response.data.errorCode = response.statusCode;
     response.data.error = message;
-    reject(response.data)
+    return response
   }
 }
 
@@ -52,24 +51,24 @@ export default {
   /**
    * request
    */
-  request(options: any, method?: string) {
-    const { url } = options;
-    console.log("----->" + url);
-    return new Promise(function (resolve, reject) {
-      Taro.request({
-        ...options,
-        method: method || 'get',
-        url: url,
-        header: {
-          'content-type': options.contentType || 'application/x-www-form-urlencoded',
-          cookie: Taro.getStorageSync('cookies'),
-          ...options.header
-        },
-      }).then(setCookie)
-        .then(res => {
-          checkStatus(res, resolve, reject);
-        })
-    });
+  async request(options: any, method?: string) {
+    const {url} = options;
+    return Taro.request({
+      ...options,
+      method: method || 'get',
+      url: url,
+      header: {
+        'content-type': options.contentType || 'application/x-www-form-urlencoded',
+        cookie: Taro.getStorageSync('cookies'),
+        ...options.header
+      },
+    }).then(setCookie)
+      .then(checkStatus)
+      .then(res => {
+        return res;
+        // console.log("======>>>>>" + JSON.stringify(checkStatus(res, resolve, reject)))
+        // return checkStatus(res, resolve, reject);
+      })
   },
 
   /**

@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "JavaNorthMiniApp",
   "description": "JavaNorth",
-  "appid": "touristappid",
+  "appid": "wxb27ac135346a05ef",
   "setting": {
     "urlCheck": true,
     "es6": false,

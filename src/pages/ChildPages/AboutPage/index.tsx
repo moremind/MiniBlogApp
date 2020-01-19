@@ -2,11 +2,12 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import {View, Text, RichText, Button} from '@tarojs/components'
 import './index.scss'
 // eslint-disable-next-line @typescript-eslint/no-var-requires,import/first
-// import Marked from 'marked'
+import Marked from 'marked'
 // import WxParse from '../../../component/wxParse/wxParse.js'
 // import Html2Wxml from '../../../component/html2wxml/html2wxml'
 // // eslint-disable-next-line import/first
 // import Markdown from 'markdown-it'
+import ToWxml from '../../../component/towxml/index'
 import {connect} from '@tarojs/redux';
 // import about from "../../../models/about";
 
@@ -24,13 +25,16 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    // navigationBarTitleText: '首页'
+    usingComponents: {
+      wemark: '../../../wemark/wemark'
+    }
   };
   constructor (props) {
     // eslint-disable-next-line prefer-rest-params
     super(props);
     this.state = {
-      article: []
+      article: '# head',
+      md: '# heading\n\nText'
     }
   }
   componentWillMount () {
@@ -41,51 +45,21 @@ export default class Index extends Component {
       }
     }).then(function () {
     });
-    // const that = this;
-
-    // await Taro.request({
-    //   url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
-    // }).then(function (response) {
-    //   console.log("request success");
-    //   that.setState({
-    //     article: JSON.stringify(response.data)
-    //   });
-    //   console.log(JSON.stringify(response.data))
-    // });
-
-    // this.state.article = this.getData();
   }
 
   componentDidMount() {
     this.props.dispatch({
       type: 'about/load',
       payload: ''
-    })
-    console.log(this.props.about.article.article)
-    // this.props.dispatch({
-    //   type: 'about/load',
-    //   payload: {}
-    // })
-    // dispatch
-    // var that = this;
-    // let p = new Promise(function (resolve, reject) {
-    //   Taro.request({
-    //     url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
-    //     success: function (res) {
-    //       // console.log(JSON.stringify(res.data));
-    //       resolve({data: JSON.stringify(res.data)});
-    //       // return JSON.stringify(res.data).toString();
-    //     },
-    //     fail: function (res) {
-    //       reject(res);
-    //     }
-    //   });
+    });
+    // const towxml = new ToWxml();
+    // console.log("----article:", this.props.about.article.data);
+    // const textData = towxml.toJson(Marked(this.props.about.article.data.name), 'html');
+    // console.log("***#####", textData)
+    // this.setState({
+    //   article: textData
     // });
-    // p.then(function (data) {
-    //
-    //   console.log("--------------" + JSON.stringify(data))
-    //   console.log(data.data)
-    // });
+
 
 
     // console.log("---111>" + this.state.article)
@@ -114,22 +88,19 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
-  getData () {
-    return new Promise(function (resolve, reject) {
-      return Taro.request({
-        url: 'https://raw.githubusercontent.com/hirCodd/JavaNorth/master/JavaBasis/%E7%BC%96%E7%A8%8B%E7%8F%A0%E7%8E%91/%E5%AE%9E%E7%94%A8%E7%9A%84Java%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%91%BD%E5%90%8D%E6%94%BB%E7%95%A5.md',
-        success: function (res) {
-          // console.log(JSON.stringify(res.data));
-          resolve({data: JSON.stringify(res.data)});
-          // return JSON.stringify(res.data).toString();
-        }
-      });
-    });
-
-  }
-
 
   showPage () {
+    // console.log("--------------====>" + JSON.stringify(this.props.about.article.data.name))
+    // this.setState({
+    //   article: Marked(this.props.about.article.data.name)
+    // })
+    // console.log("---------***" + this.state.article)
+    // // const toWxml = new ToWxml();
+    // // toWxml.toJson('# Article title','markdown');
+    // // let wxml = toWxml.toJson('# Article title', 'markdown');
+    // // console.log("uuuuuuuuuuuuuuuuuuuuu", wxml)
+    // return Marked(this.props.about.article.data.name);
+
     // return this.state.article
     // var md = new Markdown();
     // console.log(md.render(this.getData()));
@@ -147,11 +118,17 @@ export default class Index extends Component {
   render () {
     return (
       <View>
-        <Button>测试按钮1</Button>
-        <View>{this.props.about.article.article}</View>
-        {/*<View>{this.state.article}</View>*/}
-        {/*<import src='../../../component/wxParse/wxParse.wxml' />*/}
-        {/*<template is='wxParse' data='{{wxParseData:article.nodes}}'/>*/}
+        <Button onClick={this.showPage}>测试按钮1</Button>
+        {/*<Text>{JSON.stringify(this.showPage())}</Text>*/}
+        {/*<View>{Marked(this.props.about.article.data.name)}</View>*/}
+        <Text>{this.state.article}</Text>
+        {/*<Text>{this.state}</Text>*/}
+        <View className='index'>
+          <wemark md={this.state.md} link highlight type='wemark' />
+          <wemark md={this.state.article} link highlight type='wemark' />
+        </View>
+        {/*<import src='../../../component/towxml/towxml.wxml' />*/}
+        {/*<template is='nodes'  data='{{...article}}'/>*/}
         {/*<import src="../../../component/html2wxml/html2wxml.wxml" />*/}
         {/*<template is='html2wxml' data='{{wxmlData:article}}' />*/}
         {/*<RichText nodes={'article'}>{this.state.article}</RichText>*/}

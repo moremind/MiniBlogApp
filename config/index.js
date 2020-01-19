@@ -35,6 +35,14 @@ const config = {
   defineConstants: {
     // 'process.env.SERVER_ENV': JSON.stringify(process.env.SERVER_ENV),
   },
+  copy: {
+    patterns: [
+      { from: 'src/component/towxml', to: 'dist/component/towxml'},
+      { from: 'src/wemark', to: 'dist/wemark' },
+      // { from: 'src/components/wxParse/wxParse.wxml', to: 'dist/components/wxParse/wxParse.wxml'}
+    ],
+    options: {}
+  },
   mini: {
     postcss: {
       pxtransform: {
@@ -58,6 +66,11 @@ const config = {
   },
   // 小程序端专用配置
   weapp: {
+    compile: {
+      exclude: [
+        'src/wemark/remarkable.js',
+      ]
+    },
     postcss: {
       autoprefixer: {
         enable: true

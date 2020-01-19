@@ -4,10 +4,11 @@ import * as ApiService from '../services/index'
 export default {
   namespace: 'about',
   state: {
-    article: '测试时'
+    article: ''
   },
   reducers: {
     save (state, { payload }) {
+      console.log("----->" + JSON.stringify(payload))
       return { ...state, article: payload };
     }
   },
@@ -18,8 +19,8 @@ export default {
       const { data } = yield call(ApiService.getMarkDown, {
         url: 'http://localhost:8090/api/test'
       });
-      console.log("@@@@@data---->" + data);
-      yield put({type: 'save', payload: { article: 'aadafsaf'}})
+      console.log("@@@@@data---->" + JSON.stringify(data));
+      yield put({type: 'save', payload: { data }})
     }
   }
 }
