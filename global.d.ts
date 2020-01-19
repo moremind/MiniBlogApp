@@ -19,6 +19,7 @@ declare const process: {
 
 declare namespace JSX {
   interface IntrinsicElements {
-    wemark: any
+    wemark: any;
+    towxml: any;
   }
 }

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires,import/no-commonjs
+var path = require("path");
 const config = {
   projectName: 'JavaNorthMiniApp',
   date: '2020-1-6',
@@ -37,16 +39,33 @@ const config = {
   },
   copy: {
     patterns: [
-      { from: 'src/component/towxml', to: 'dist/component/towxml'},
+      // { from: 'src/component/towxml', to: 'dist/component/towxml'},
       { from: 'src/wemark', to: 'dist/wemark' },
+      // { from: 'src/wemark/parser.js', to: 'dist/wemark/parser.js'},
+      // { from: 'src/wemark/prism.js', to: 'dist/wemark/prism.js'},
+      // { from: 'src/wemark/prism.wxss', to: 'dist/wemark/prism.wxss'},
+      // { from: 'src/wemark/remarkable.js', to: 'dist/wemark/remarkable.js'},
+      // { from: 'src/wemark/richtext.js', to: 'dist/wemark/richtext.js'},
+      // { from: 'src/wemark/wemark.js', to: 'dist/wemark/wemark.js'},
+      // { from: 'src/wemark/wemark.json', to: 'dist/wemark/wemark.json'},
+      // { from: 'src/wemark/wemark.wxml', to: 'dist/wemark/wemark.wxml'},
+      // { from: 'src/wemark/wemark.wxss', to: 'dist/wemark/wemark.wxss'},
+
+
+
       // { from: 'src/components/wxParse/wxParse.wxml', to: 'dist/components/wxParse/wxParse.wxml'}
     ],
     options: {}
   },
   mini: {
+    compile: {
+      exclude: [
+        path.resolve(__dirname, '..', 'src/wemark/remarkable.js')
+      ]
+    },
     postcss: {
       pxtransform: {
-        enable: true,
+        enable: false,
         config: {}
       },
       url: {
