@@ -15,6 +15,6 @@ export function getMarkDown() {
   //   url: 'http://localhost:8090/api/test'
   // })))
   return API.get({
-    url: 'http://192.168.2.104:8090/api/test'
+    url: 'http://localhost:8090/api/test'
   });
 }
