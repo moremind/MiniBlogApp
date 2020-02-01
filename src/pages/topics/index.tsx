@@ -1,16 +1,9 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { AtGrid } from "taro-ui"
+import * as Conf from './config'
 import './index.scss'
-import JavaBasicPng from '../../assets/pic/Java.jpg'
-import JvmPng from '../../assets/pic/jvm.png'
-import JavaInterview from '../../assets/pic/interview-bak.jpg'
-import SpringPng from '../../assets/pic/spring.png'
-import SpringBootPng from '../../assets/pic/springboot.jpg'
-import SpringCloudPng from '../../assets/pic/springcloud.png'
-import NetworkPng from '../../assets/pic/network1.png'
-import WebPng from '../../assets/pic/frontend1.png'
-import RecordPng from '../../assets/pic/book2.png'
+
 
 export default class Topics extends Component {
   constructor() {
@@ -19,67 +12,67 @@ export default class Topics extends Component {
       // eslint-disable-next-line react/no-unused-state
       dataList: [
         {
-          index: 0,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: JavaBasicPng,
+          index: Conf.TOPIC_ONE.index,
+          url: Conf.TOPIC_ONE.url,
+          image: Conf.TOPIC_ONE.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
-          value: 'Java专题'
+          value: Conf.TOPIC_ONE.name
         },
         {
-          index: 1,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: JvmPng,
+          index: Conf.TOPIC_TWO.index,
+          url: Conf.TOPIC_TWO.url,
+          image: Conf.TOPIC_TWO.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
-          value: 'JVM专题'
+          value: Conf.TOPIC_TWO.name
         },
         {
-          index: 2,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: JavaInterview,
+          index: Conf.TOPIC_THREE.index,
+          url: Conf.TOPIC_THREE.url,
+          image: Conf.TOPIC_THREE.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
-          value: 'Java开发面试'
+          value: Conf.TOPIC_THREE.name
         },
         {
-          index: 3,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: SpringPng,
+          index: Conf.TOPIC_FOUR.index,
+          url: Conf.TOPIC_FOUR.url,
+          image: Conf.TOPIC_FOUR.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
-          value: 'Spring框架'
+          value: Conf.TOPIC_FOUR.name
         },
         {
-          index: 4,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: SpringBootPng,
+          index: Conf.TOPIC_FIVE.index,
+          url: Conf.TOPIC_FIVE.url,
+          image: Conf.TOPIC_FIVE.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
-          value: 'SpringBoot模块'
+          value: Conf.TOPIC_FIVE.name
         },
         {
-          index: 5,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: SpringCloudPng,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png',
-          value: 'SpringCloud模块'
-        },
-        {
-          index: 6,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: NetworkPng,
+          index: Conf.TOPIC_SIX.index,
+          url: Conf.TOPIC_SIX.url,
+          image: Conf.TOPIC_SIX.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
-          value: '网络编程'
+          value: Conf.TOPIC_SIX.name
         },
         {
-          index: 7,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: WebPng,
+          index: Conf.TOPIC_SEVEN.index,
+          url: Conf.TOPIC_SEVEN.url,
+          image: Conf.TOPIC_SEVEN.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
-          value: 'Web编程'
+          value: Conf.TOPIC_SEVEN.name
         },
         {
-          index: 8,
-          url: '/pages/ChildPages/JavaBasicPage/index',
-          image: RecordPng,
+          index: Conf.TOPIC_EIGHT.index,
+          url: Conf.TOPIC_EIGHT.url,
+          image: Conf.TOPIC_EIGHT.image,
+          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
+          value: Conf.TOPIC_EIGHT.name
+        },
+        {
+          index: Conf.TOPIC_NINE.index,
+          url: Conf.TOPIC_NINE.url,
+          image: Conf.TOPIC_NINE.image,
           // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
-          value: '技术杂记'
+          value: Conf.TOPIC_NINE.name
         }
       ]
     }

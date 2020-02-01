@@ -1,16 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import {View, Text, RichText, Button} from '@tarojs/components'
 import './index.scss'
-// eslint-disable-next-line @typescript-eslint/no-var-requires,import/first
-import Marked from 'marked'
-// import WxParse from '../../../component/wxParse/wxParse.js'
-// import Html2Wxml from '../../../component/html2wxml/html2wxml'
-// // eslint-disable-next-line import/first
-// import Markdown from 'markdown-it'
-import ToWxml from '../../../component/towxml/index'
 import {connect} from '@tarojs/redux';
-// import about from "../../../models/about";
-// import wemark from '../../../wemark/wemark'
 
 // @ts-ignore
 @connect(({ about }) => ({

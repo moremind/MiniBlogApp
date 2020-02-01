@@ -1,0 +1,55 @@
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/textarea.scss";
+
+@media (max-width: 767Px) {
+  .issue-box {
+    //display: flex;
+    width: 100%;
+    margin-top: 50Px;
+    font-size: 16Px;
+    line-height: 20Px;
+  }
+
+  .issue-box .at-textarea__textarea {
+    font-size: 16Px;
+  }
+
+  .issue-box .at-textarea__counter {
+    font-size: 16Px;
+  }
+
+  .issue-box .at-textarea {
+    width: 100%;
+    padding: 0;
+  }
+  .submit-button .submit {
+    margin-top: 20Px;
+    font-size: 16Px;
+    height: 40Px;
+    line-height: 35Px;
+    width: 80Px;
+  }
+}
+
+
+@media (min-width: 768Px) and (max-width: 1024Px) {
+  .issue-box {
+    //display: flex;
+    width: 100%;
+    //height: 600PX;
+    margin-top: 50Px;
+    font-size: 16Px;
+    line-height: 20Px;
+  }
+
+  .submit-button .submit {
+    margin-top: 20Px;
+    font-size: 16Px;
+    height: 40Px;
+    line-height: 35Px;
+    width: 80Px;
+  }
+
+}
+
+
