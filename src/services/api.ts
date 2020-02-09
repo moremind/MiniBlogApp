@@ -7,7 +7,7 @@
  */
 
 import Taro from '@tarojs/taro'
-import { HTTP_STATUS } from './config'
+import { HTTP_STATUS, BASE_URL } from './config'
 // eslint-disable-next-line import/first
 import qs from 'qs'
 
@@ -56,7 +56,8 @@ export default {
     return Taro.request({
       ...options,
       method: method || 'get',
-      url: url,
+      url: BASE_URL + url,
+      data: options.data,
       header: {
         'content-type': options.contentType || 'application/x-www-form-urlencoded',
         cookie: Taro.getStorageSync('cookies'),
@@ -75,6 +76,7 @@ export default {
    * get
    */
   get(options: any) {
+    console.log(JSON.stringify(options));
     return this.request({
       ...options,
     }, 'get');

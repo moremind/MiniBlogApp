@@ -15,6 +15,13 @@ export function getMarkDown() {
   //   url: 'http://localhost:8090/api/test'
   // })))
   return API.get({
-    url: 'http://localhost:8090/api/test'
+    url: '/test'
   });
+}
+
+export function getIndexArticle() {
+  return API.get({
+
+  });
+
 }
