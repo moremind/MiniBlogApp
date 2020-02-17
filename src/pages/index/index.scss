@@ -1,9 +1,14 @@
 @import "~taro-ui/dist/style/components/search-bar.scss";
 @import "~taro-ui/dist/style/components/button.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
-@import "~taro-ui/dist/style/components/list.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
-@import "~taro-ui/dist/style/components/card.scss";
+//@import "~taro-ui/dist/style/components/list.scss";
+//@import "~taro-ui/dist/style/components/icon.scss";
+//@import "~taro-ui/dist/style/components/card.scss";
+
+@import "~taro-ui/dist/style/components/load-more.scss";
+@import "~taro-ui/dist/style/components/activity-indicator.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+
 .at-search-bar {
   margin-bottom: 6Px;
 }
@@ -46,4 +51,11 @@
 
 .at-search-bar__clear {
   height: 40Px;
+}
+.load-more >.at-load-more__cnt > at-button > .at-button {
+  font-size: 16px;
+}
+
+.load-more > .at-load-more__tip {
+  font-size: 16px;
 }

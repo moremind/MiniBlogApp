@@ -1,12 +1,17 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import './index.scss'
 // eslint-disable-next-line import/first
-import { AtSearchBar } from 'taro-ui'
+import { AtSearchBar, AtLoadMore  } from 'taro-ui'
 // eslint-disable-next-line import/first
-import { View } from '@tarojs/components'
+import {Button, View} from '@tarojs/components'
 import Article from "../../component/Article";
 
+import {connect} from '@tarojs/redux';
 
+// @ts-ignore
+@connect(({ home }) => ({
+  home
+}))
 export default class Index extends Component {
 
   /**
@@ -19,11 +24,13 @@ export default class Index extends Component {
   config: Config = {
     navigationBarTitleText: '首页'
   };
-  constructor () {
+  constructor (props) {
     // eslint-disable-next-line prefer-rest-params
-    super(...arguments);
+    super(props);
     this.state = {
-      value: ''
+      value: '',
+      status: 'more',
+      articles: []
     }
   }
   onChange (value) {
@@ -41,6 +48,48 @@ export default class Index extends Component {
     }).then(function () {
     });
   }
+  handleClick () {
+    // 开始加载
+    this.setState({
+      status: 'loading'
+    });
+    // 模拟异步请求数据
+    setTimeout(() => {
+      // 没有更多了
+      this.setState({
+        status: 'noMore'
+      })
+    }, 2000)
+  }
+  async getArticles() {
+    await this.props.dispatch({
+      type: 'home/load',
+      payload: {
+        pageNum: 1, pageSize: 2
+      }
+    });
+    // await this.setState({
+    //   articles: this.props.home.articles
+    // });
+    await this.props.home.articles.map((article) => {
+      this.state.articles.push(article);
+    });
+    // await this.state.articles.push(this.props.home.articles);
+    // console.log(JSON.stringify(this.props.home.articles))
+    console.log(JSON.stringify(this.state.articles))
+    this.state.articles.map((post) => {
+      console.log(post)
+    })
+  }
+  componentDidMount() {
+    this.getArticles();
+
+    // this.setState({
+    //   articles: this.props.about.article.data
+    // })
+
+  }
+
   render () {
     return (
       <View>
@@ -53,15 +102,38 @@ export default class Index extends Component {
         />
         <View>
           {/*文章渲染列表*/}
-          <Article onClick={this.onClickArticle}></Article>
+          {/*{this.state.articles.map((article) => {*/}
+          {/*  <View>{article}</View>*/}
+          {/*})*/}
+          {/*}*/}
+          {/*<View>*/}
+          {/*  /!*文章渲染列表*!/*/}
+          {/*  <Article onClick={this.onClickArticle}></Article>*/}
+          {/*</View>*/}
+            {this.state.articles.map((post) =>
+              <Article onClick={this.onClickArticle}
+                       articleId={post.articleId}
+                       title={post.title}
+              ></Article>
+            )}
+
+
         </View>
+        <Button onClick={this.getArticles}>请求文章</Button>
+         <View >
+           <AtLoadMore
+             className='load-more'
+             onClick={this.handleClick.bind(this)}
+             status={this.state.status}
+           />
+         </View>
       </View>
     )
   }
 
-  componentWillMount () { }
 
-  componentDidMount () { }
+
+  componentWillMount () { }
 
   componentWillUnmount () { }
 

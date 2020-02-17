@@ -19,9 +19,9 @@ export function getMarkDown() {
   });
 }
 
-export function getIndexArticle() {
+export function getIndexArticle(pageNum, pageSize) {
   return API.get({
-
+    url: '/article/getArticle?' + 'pageNum=' + pageNum + '&pageSize=' + pageSize
   });
 
 }

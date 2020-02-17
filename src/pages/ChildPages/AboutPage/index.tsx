@@ -42,16 +42,19 @@ export default class Index extends Component {
 
   }
 
-  componentDidMount() {
-    this.props.dispatch({
+  async getList() {
+    await this.props.dispatch({
       type: 'about/load',
       payload: ''
     });
 
-    this.setState({
-      articles: this.props.about.article.data
+    await this.setState({
+      articles: this.props.about.articles.data
     })
+  }
 
+  componentDidMount() {
+    this.getList();
   }
 
 
