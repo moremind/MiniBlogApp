@@ -8,8 +8,10 @@
 
 import about from './about'
 import home from './home'
-
+import topic from './topic'
+//导出所有的model
 export default [
   about,
   home,
+  topic
 ];

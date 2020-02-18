@@ -1,7 +1,7 @@
 import * as ApiService from '../services/index'
 
 export default {
-  namespace: 'home',
+  namespace: 'topic',
   state: {
     articles: [],
     content: ''

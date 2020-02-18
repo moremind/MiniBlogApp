@@ -14,13 +14,6 @@ import {connect} from '@tarojs/redux';
 }))
 export default class Index extends Component {
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
   config: Config = {
     navigationBarTitleText: '首页'
   };
@@ -28,6 +21,9 @@ export default class Index extends Component {
     // eslint-disable-next-line prefer-rest-params
     super(props);
     this.state = {
+      defaultPageNum: 1,
+      currentPageNum: '',
+      pageSize: 6,
       value: '',
       status: 'more',
       articles: []
@@ -41,10 +37,9 @@ export default class Index extends Component {
   onActionClick () {
     console.log('开始搜索')
   }
-  onClickArticle () {
-    console.log("ssss");
+  onClickArticle (articleId, title) {
     Taro.navigateTo({
-      url: '/pages/ChildPages/ArticleDetails/index' + '?articleName=' + '哈哈哈'
+      url: '/pages/ChildPages/ArticleDetails/index' + '?articleId=' + articleId + '&articleName=' + title
     }).then(function () {
     });
   }
@@ -65,29 +60,16 @@ export default class Index extends Component {
     await this.props.dispatch({
       type: 'home/load',
       payload: {
-        pageNum: 1, pageSize: 2
+        pageNum: this.state.defaultPageNum,
+        pageSize: this.state.pageSize
       }
     });
-    // await this.setState({
-    //   articles: this.props.home.articles
-    // });
     await this.props.home.articles.map((article) => {
       this.state.articles.push(article);
     });
-    // await this.state.articles.push(this.props.home.articles);
-    // console.log(JSON.stringify(this.props.home.articles))
-    console.log(JSON.stringify(this.state.articles))
-    this.state.articles.map((post) => {
-      console.log(post)
-    })
   }
   componentDidMount() {
     this.getArticles();
-
-    // this.setState({
-    //   articles: this.props.about.article.data
-    // })
-
   }
 
   render () {
@@ -101,23 +83,15 @@ export default class Index extends Component {
           onActionClick={this.onActionClick.bind(this)}
         />
         <View>
-          {/*文章渲染列表*/}
-          {/*{this.state.articles.map((article) => {*/}
-          {/*  <View>{article}</View>*/}
-          {/*})*/}
-          {/*}*/}
-          {/*<View>*/}
-          {/*  /!*文章渲染列表*!/*/}
-          {/*  <Article onClick={this.onClickArticle}></Article>*/}
-          {/*</View>*/}
-            {this.state.articles.map((post) =>
-              <Article onClick={this.onClickArticle}
-                       articleId={post.articleId}
-                       title={post.title}
-              ></Article>
-            )}
-
-
+          {this.state.articles.map((post) =>
+            <Article onClick={this.onClickArticle.bind(this, post.articleId, post.title)}
+                     key={post.articleId}
+                     articleId={post.articleId}
+                     title={post.title}
+                     author={post.author}
+                     publishTime={post.publishTime}
+            ></Article>
+          )}
         </View>
         <Button onClick={this.getArticles}>请求文章</Button>
          <View >
@@ -130,15 +104,4 @@ export default class Index extends Component {
       </View>
     )
   }
-
-
-
-  componentWillMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
 }

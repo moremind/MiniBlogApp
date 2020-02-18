@@ -7,21 +7,34 @@
  */
 
 
-import API from './api'
+import Api from './api'
 
-// eslint-disable-next-line import/prefer-default-export
 export function getMarkDown() {
-  // console.log("get data:---------->" + JSON.stringify(API.get({
-  //   url: 'http://localhost:8090/api/test'
-  // })))
-  return API.get({
+  return Api.get({
     url: '/test'
   });
 }
 
+/**
+ * 获取文章
+ * @param pageNum
+ * @param pageSize
+ */
 export function getIndexArticle(pageNum, pageSize) {
-  return API.get({
+  return Api.get({
     url: '/article/getArticle?' + 'pageNum=' + pageNum + '&pageSize=' + pageSize
   });
 
 }
+
+/**
+ * 通过文章id获取文章内容
+ * @param articleId
+ */
+export function getContentById(articleId) {
+  return Api.get({
+    url: '/article/getContent?' + 'articleId=' + articleId
+  })
+}
+
+

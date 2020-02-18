@@ -5,15 +5,26 @@
  * @date: 2020年1月30日
  * @licence: MIT hirCodd
  */
-import JavaBasicPng from '../../assets/pic/Java.jpg'
-import JvmPng from '../../assets/pic/jvm.png'
-import JavaInterview from '../../assets/pic/interview-bak.jpg'
-import SpringPng from '../../assets/pic/spring.png'
-import SpringBootPng from '../../assets/pic/springboot.jpg'
-import SpringCloudPng from '../../assets/pic/springcloud.png'
-import NetworkPng from '../../assets/pic/network1.png'
-import WebPng from '../../assets/pic/frontend1.png'
-import RecordPng from '../../assets/pic/book2.png'
+// import JavaBasicPng from '../../assets/pic/Java.jpg'
+// import JvmPng from '../../assets/pic/jvm.png'
+// import JavaInterview from '../../assets/pic/interview-bak.jpg'
+// import SpringPng from '../../assets/pic/spring.png'
+// import SpringBootPng from '../../assets/pic/springboot.jpg'
+// import SpringCloudPng from '../../assets/pic/springcloud.png'
+// import NetworkPng from '../../assets/pic/network1.png'
+// import WebPng from '../../assets/pic/frontend1.png'
+// import RecordPng from '../../assets/pic/book2.png'
+
+const JavaBasicPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg';
+const JvmPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png';
+const JavaInterview = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/interview.jpg';
+const SpringPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png';
+const SpringBootPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg';
+const SpringCloudPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springcloud.png';
+const NetworkPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png';
+const WebPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png';
+const RecordPng = 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png';
+
 
 const commonUrl = '/pages/ChildPages/JavaBasicPage/index';
 export const TOPIC_ONE = {

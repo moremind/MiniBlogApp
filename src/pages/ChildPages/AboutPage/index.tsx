@@ -49,7 +49,7 @@ export default class Index extends Component {
     });
 
     await this.setState({
-      articles: this.props.about.articles.data
+      articles: this.props.about.article.data
     })
   }
 

@@ -1,52 +1,15 @@
-import Taro, {Component, Config} from '@tarojs/taro'
+import Taro, {Component} from '@tarojs/taro'
 import {View, Image, Text} from '@tarojs/components'
 import { AtDivider } from 'taro-ui'
 import './index.scss'
-// eslint-disable-next-line import/first
-import PropTypes from 'prop-types';
-// type Props = {
-//   onClick: () => void,
-//   articleId: number,
-//   title: string,
-//   thumb: string,
-//   author: string,
-//   publishTime: string
-// }
 export default class Article extends Component {
   static options = {
     addGlobalClass: true
   };
-  static defaultProps = {
-    onClick: () => { },
-    articleId: '',
-    title: '',
-    thumb: '',
-    author: '',
-    publishTime: ''
-  };
-  static propTypes = {
-    onClick: PropTypes.func,
-    articleId: PropTypes.number,
-    title: PropTypes.string,
-    thumb: PropTypes.string,
-    author: PropTypes.string,
-    publishTime: PropTypes.string
-  };
-  constructor (props) {
-    // eslint-disable-next-line prefer-rest-params
-    super(props);
-    this.state = {
-      articleId: '',
-      title: '',
-      author: '',
-
-    }
-  }
-  componentDidMount(): void {
-  }
 
   render () {
-    const {articleId, title} = this.props;
+    // const {articleId, title} = this.props;
+    // console.log(this.props)
     return (
       <View className='article' onClick={this.props.onClick}>
         {/*文章内容*/}
@@ -57,16 +20,17 @@ export default class Article extends Component {
           </View>
           <View className='article-content'>
             {/*标题*/}
-            <View className='at-col article-title'>{articleId}</View>
+            <View className='at-col article-title'>{this.props.title}</View>
+            {/*<View className='at-col article-title'>{this.state.title}</View>*/}
             {/*标签*/}
             <View className='article-tag'>
               <View className='author-view'>
                 <View className='at-icon at-icon-user' />
-                <Text className='author'>{title}</Text>
+                <Text className='author'>{this.props.author}</Text>
               </View>
               <View className='publish-view'>
                 <View className='at-icon at-icon-calendar' />
-                <Text className='publish-date'>2020年1月2日</Text>
+                <Text className='publish-date'>{this.props.publishTime}</Text>
               </View>
             </View>
           </View>

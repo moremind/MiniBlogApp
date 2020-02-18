@@ -9,69 +9,59 @@ export default class Topics extends Component {
   constructor() {
     super();
     this.state = {
-      // eslint-disable-next-line react/no-unused-state
       dataList: [
         {
           index: Conf.TOPIC_ONE.index,
           url: Conf.TOPIC_ONE.url,
           image: Conf.TOPIC_ONE.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
           value: Conf.TOPIC_ONE.name
         },
         {
           index: Conf.TOPIC_TWO.index,
           url: Conf.TOPIC_TWO.url,
           image: Conf.TOPIC_TWO.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/jvm.png',
           value: Conf.TOPIC_TWO.name
         },
         {
           index: Conf.TOPIC_THREE.index,
           url: Conf.TOPIC_THREE.url,
           image: Conf.TOPIC_THREE.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg',
           value: Conf.TOPIC_THREE.name
         },
         {
           index: Conf.TOPIC_FOUR.index,
           url: Conf.TOPIC_FOUR.url,
           image: Conf.TOPIC_FOUR.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/spring.png',
           value: Conf.TOPIC_FOUR.name
         },
         {
           index: Conf.TOPIC_FIVE.index,
           url: Conf.TOPIC_FIVE.url,
           image: Conf.TOPIC_FIVE.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/springboot.jpg',
           value: Conf.TOPIC_FIVE.name
         },
         {
           index: Conf.TOPIC_SIX.index,
           url: Conf.TOPIC_SIX.url,
           image: Conf.TOPIC_SIX.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/network1.png',
           value: Conf.TOPIC_SIX.name
         },
         {
           index: Conf.TOPIC_SEVEN.index,
           url: Conf.TOPIC_SEVEN.url,
           image: Conf.TOPIC_SEVEN.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
           value: Conf.TOPIC_SEVEN.name
         },
         {
           index: Conf.TOPIC_EIGHT.index,
           url: Conf.TOPIC_EIGHT.url,
           image: Conf.TOPIC_EIGHT.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/frontend1.png',
           value: Conf.TOPIC_EIGHT.name
         },
         {
           index: Conf.TOPIC_NINE.index,
           url: Conf.TOPIC_NINE.url,
           image: Conf.TOPIC_NINE.image,
-          // image: 'https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/book2.png',
           value: Conf.TOPIC_NINE.name
         }
       ]
