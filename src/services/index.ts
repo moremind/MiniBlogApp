@@ -29,7 +29,7 @@ export function getIndexArticle(pageNum, pageSize) {
 
 /**
  * 通过文章id获取文章内容
- * @param articleId
+ * @param articleId 文章id
  */
 export function getContentById(articleId) {
   return Api.get({
@@ -37,4 +37,23 @@ export function getContentById(articleId) {
   })
 }
 
+/**
+ * 获取所有分类
+ */
+export function getCategory() {
+  return Api.get({
+    url: '/category/getCategory'
+  })
 
+}
+
+/**
+ * 通过文章分类获取文章
+ * @param category 分类
+ */
+export function getArticlesByCategory(category) {
+  return Api.get({
+    url: '/article/getArticlesByCategory?' + 'category=' + category
+  })
+
+}

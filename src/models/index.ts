@@ -9,9 +9,11 @@
 import about from './about'
 import home from './home'
 import topic from './topic'
+import topicDetail from "./topicDetail";
 //导出所有的model
 export default [
   about,
   home,
-  topic
+  topic,
+  topicDetail
 ];

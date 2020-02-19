@@ -5,19 +5,22 @@ import { AtSearchBar } from 'taro-ui'
 // eslint-disable-next-line import/first
 import { View } from '@tarojs/components'
 import Article from "../../../component/Article";
+import {connect} from "@tarojs/redux";
 
+// @ts-ignore
+@connect(({ topicDetail }) => ({
+  topicDetail
+}))
 export default class Index extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       // eslint-disable-next-line react/no-unused-state
-      title: this.$router.params.value
+      title: this.$router.params.value,
+      articles: []
     }
     // Taro.setNavigationBarTitle(this.$router.params.value);
-  }
-  setTitle () {
-    return this.$router.params.value
   }
 
   config: Config = {
@@ -26,19 +29,34 @@ export default class Index extends Component {
   //接收路由参数，在生命周期函数中获取
   componentWillMount () {
     Taro.setNavigationBarTitle({
-      title: this.$router.params.value,
-      success () {
-        console.log("加载页面业务");
+      title: this.$router.params.value
+    });
+  }
+
+  // 通过分类获取文章
+  async  getArticlesByCategory () {
+    await this.props.dispatch({
+      type: 'topicDetail/getCategoryArticles',
+      payload: {
+        category: this.$router.params.origin
       }
     });
-    console.log(typeof this.$router.params.value) // 输出 { id: 2, type: 'test' }
+    await this.props.topicDetail.articles.map((article) => {
+      this.state.articles.push(article);
+    });
+    console.log(JSON.stringify(this.props.topicDetail.articles))
   }
 
-  componentDidMount () {
+  async componentDidMount () {
+    await this.getArticlesByCategory();
 
   }
 
-  componentWillUnmount () { }
+  componentWillUnmount () {
+    this.setState({
+      articles: []
+    })
+  }
 
   componentDidShow () { }
 
@@ -60,6 +78,7 @@ export default class Index extends Component {
     });
   }
 
+
   render () {
     return (
       <View className='index'>
@@ -72,11 +91,17 @@ export default class Index extends Component {
             onActionClick={this.onActionClick.bind(this)}
           />
           <View>
-            {/*文章渲染列表*/}
-            <Article onClick={this.onClickArticle}></Article>
+            {this.state.articles.map((post) =>
+              <Article onClick={this.onClickArticle.bind(this, post.articleId, post.title)}
+                       key={post.articleId}
+                       articleId={post.articleId}
+                       title={post.title}
+                       author={post.author}
+                       publishTime={post.publishTime}
+              ></Article>
+            )}
           </View>
         </View>
-
       </View>
     )
   }
