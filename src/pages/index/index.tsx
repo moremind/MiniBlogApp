@@ -22,54 +22,108 @@ export default class Index extends Component {
     super(props);
     this.state = {
       defaultPageNum: 1,
-      currentPageNum: '',
       pageSize: 6,
       value: '',
       status: 'more',
-      articles: []
+      articles: [],
+      searchArticles: [],
+      isSearch: false
     }
+  }
+  async componentDidMount() {
+    await this.getArticles(this.state.defaultPageNum);
   }
   onChange (value) {
     this.setState({
       value: value
-    })
+    });
+    console.log(value)
   }
-  onActionClick () {
-    console.log('开始搜索')
+  async onClear () {
+    await this.setState({
+      isSearch: false
+    });
+    await this.setState({
+      searchArticles: []
+    });
+  }
+  async onBlur () {
+    await this.setState({
+      isSearch: false
+    });
+    await this.setState({
+      searchArticles: []
+    });
+    console.log(this.state.articles)
+  }
+  async onActionClick () {
+    await this.setState({
+      isSearch: true
+    });
+    await this.props.dispatch({
+      type: 'home/searchArticle',
+      payload: {
+        keyword: this.state.value
+      }
+    });
+    await this.props.home.articles.map((article) => {
+      if(JSON.stringify(this.state.searchArticles).indexOf(JSON.stringify(article)) === -1){
+        this.state.searchArticles.push(article);
+      } else {
+
+      }
+    });
+    // console.log(this.state.searchArticles.length)
+    await this.props.dispatch({
+      type: 'home/clean',
+      payload: {
+        articles: []
+      }
+    });
   }
   onClickArticle (articleId, title) {
     Taro.navigateTo({
       url: '/pages/ChildPages/ArticleDetails/index' + '?articleId=' + articleId + '&articleName=' + title
-    }).then(function () {
     });
   }
-  handleClick () {
-    // 开始加载
-    this.setState({
-      status: 'loading'
-    });
-    // 模拟异步请求数据
-    setTimeout(() => {
-      // 没有更多了
+  async handleClick () {
+    const that = this;
+    if (this.props.home.nextPage != 0) {
+      // 开始加载
+      this.getArticles(this.props.home.nextPage).then(function () {
+        if (that.props.home.nextPage == 0) {
+          that.setState({
+            status: 'noMore'
+          })
+        } else {
+          that.setState({
+            status: 'more'
+          });
+        }
+      })
+    } else {
       this.setState({
         status: 'noMore'
-      })
-    }, 2000)
+      });
+    }
   }
-  async getArticles() {
+  async getArticles (pageNumber) {
     await this.props.dispatch({
       type: 'home/load',
       payload: {
-        pageNum: this.state.defaultPageNum,
+        pageNum: pageNumber,
         pageSize: this.state.pageSize
       }
     });
     await this.props.home.articles.map((article) => {
       this.state.articles.push(article);
     });
-  }
-  componentDidMount() {
-    this.getArticles();
+    await this.props.dispatch({
+      type: 'home/clean',
+      payload: {
+        articles: []
+      }
+    });
   }
 
   render () {
@@ -77,28 +131,46 @@ export default class Index extends Component {
       <View>
         {/*渲染搜索按钮*/}
         <AtSearchBar
+          showActionButton
           actionName='搜一搜'
           value={this.state.value}
           onChange={this.onChange.bind(this)}
-          onActionClick={this.onActionClick.bind(this)}
+          onClear={this.onClear.bind(this)}
+          onBlur={this.onBlur.bind(this)}
+          onActionClick={this.onActionClick.bind(this)
+          }
         />
-        <View>
-          {this.state.articles.map((post) =>
-            <Article onClick={this.onClickArticle.bind(this, post.articleId, post.title)}
-                     key={post.articleId}
-                     articleId={post.articleId}
-                     title={post.title}
-                     author={post.author}
-                     publishTime={post.publishTime}
-            ></Article>
-          )}
-        </View>
-        <Button onClick={this.getArticles}>请求文章</Button>
+        {
+          this.state.isSearch ?
+            <View>
+              {this.state.searchArticles.map((post) =>
+                <Article onClick={this.onClickArticle.bind(this, post.articleId, post.title)}
+                         key={post.articleId}
+                         articleId={post.articleId}
+                         title={post.title}
+                         author={post.author}
+                         publishTime={post.publishTime}
+                ></Article>
+              )}
+            </View> : <View>
+              {this.state.articles.map((post) =>
+                <Article onClick={this.onClickArticle.bind(this, post.articleId, post.title)}
+                         key={post.articleId}
+                         articleId={post.articleId}
+                         title={post.title}
+                         author={post.author}
+                         publishTime={post.publishTime}
+                ></Article>
+              )}
+            </View>
+        }
+        {/*<Button onClick={this.getArticles}>请求文章</Button>*/}
          <View >
            <AtLoadMore
              className='load-more'
              onClick={this.handleClick.bind(this)}
              status={this.state.status}
+             noMoreText={"没有更多了"}
            />
          </View>
       </View>

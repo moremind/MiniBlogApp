@@ -55,5 +55,14 @@ export function getArticlesByCategory(category) {
   return Api.get({
     url: '/article/getArticlesByCategory?' + 'category=' + category
   })
+}
 
+/**
+ * 通过关键字查询文章
+ * @param keyword keyword
+ */
+export function searchArticlesByKeyword(keyword) {
+  return Api.get({
+    url: '/article/search?' + 'keyword=' + keyword
+  })
 }

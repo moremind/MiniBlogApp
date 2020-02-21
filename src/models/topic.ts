@@ -4,6 +4,7 @@ export default {
   namespace: 'topic',
   state: {
     categories: [],
+    userInfos: {}
   },
   reducers: {
     save (state, { payload }) {
@@ -21,9 +22,6 @@ export default {
           categories: data.data
         }
       });
-    },
-    *getCategoryArticles({ payload },{ call, put}) {
-      const { data } = yield call(ApiService.getArticlesByCategory, payload)
     }
   }
 }

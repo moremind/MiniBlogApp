@@ -1,4 +1,6 @@
 @import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/loading.scss";
 .user-pic {
   height:80Px;
 }
@@ -19,9 +21,25 @@
   margin: 0 auto;
   background-color: #FFFFFF;
 }
-.username {
-  margin-top: 10Px;
+.getUser > .username {
+  margin-top: 15Px;
   font-weight: 500;
   text-align: center;
-  font: 18Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  font: 16Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  border: 0 solid #ffffff;
+  padding: 0 12Px;
+  height: 40Px;
 }
+
+.getUser > at-button >view  {
+  margin-top: 15Px;
+  font-weight: 500;
+  text-align: center;
+  font: 16Px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  border: 0 solid #ffffff;
+  padding: 0 12Px;
+  height: 40Px;
+  //line-height: 10Px;
+}
+
+

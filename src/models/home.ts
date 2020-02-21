@@ -4,11 +4,16 @@ export default {
   namespace: 'home',
   state: {
     articles: [],
-    content: ''
+    content: '',
+    articleTotal: 0,
+    nextPage: 0
   },
   reducers: {
     save (state, { payload }) {
       console.log(payload);
+      return { ...state, ...payload };
+    },
+    clean (state, { payload }) {
       return { ...state, ...payload };
     }
   },
@@ -17,12 +22,25 @@ export default {
     // eslint-disable-next-line no-unused-vars
     *load({ payload },{ call, put}){
       const { data } = yield call(ApiService.getIndexArticle, payload.pageNum, payload.pageSize);
+      console.log(data);
       yield put({
         type: 'save',
         payload: {
           articles: data.data.list
         }
       });
+      yield put({
+        type: 'save',
+        payload: {
+          articleTotal: data.data.total
+        }
+      });
+      yield put({
+        type: 'save',
+        payload: {
+          nextPage: data.data.nextPage
+        }
+      })
     },
     //根据文章id获取文章内容
     *getContent({ payload }, { call, put }) {
@@ -33,6 +51,16 @@ export default {
           content: data.data
         }
       });
+    },
+    *searchArticle({ payload }, { call, put }) {
+      const { data } = yield call(ApiService.searchArticlesByKeyword, payload.keyword);
+      // console.log("**************" + JSON.stringify(data.data))
+      yield put({
+        type: 'save',
+        payload: {
+          articles: data.data
+        }
+      })
     }
   }
 }
