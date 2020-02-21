@@ -8,8 +8,6 @@ export default class Article extends Component {
   };
 
   render () {
-    // const {articleId, title} = this.props;
-    // console.log(this.props)
     return (
       <View className='article' onClick={this.props.onClick}>
         {/*文章内容*/}

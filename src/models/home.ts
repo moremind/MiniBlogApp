@@ -22,7 +22,6 @@ export default {
     // eslint-disable-next-line no-unused-vars
     *load({ payload },{ call, put}){
       const { data } = yield call(ApiService.getIndexArticle, payload.pageNum, payload.pageSize);
-      console.log(data);
       yield put({
         type: 'save',
         payload: {
@@ -54,7 +53,6 @@ export default {
     },
     *searchArticle({ payload }, { call, put }) {
       const { data } = yield call(ApiService.searchArticlesByKeyword, payload.keyword);
-      // console.log("**************" + JSON.stringify(data.data))
       yield put({
         type: 'save',
         payload: {

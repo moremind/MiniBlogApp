@@ -8,7 +8,6 @@ export default {
   },
   reducers: {
     save (state, { payload }) {
-      console.log("----->" + JSON.stringify(payload))
       return { ...state, article: payload };
     }
   },
@@ -17,7 +16,6 @@ export default {
     // eslint-disable-next-line no-unused-vars
     *load({ payload },{ select, call, put}){
       const { data } = yield call(ApiService.getMarkDown);
-      console.log("@@@@@data---->" + JSON.stringify(data));
       yield put({type: 'save', payload: { data }})
     }
   }

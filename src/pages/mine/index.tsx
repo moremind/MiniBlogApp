@@ -94,12 +94,9 @@ export default class Mine extends Component {
   }
 
   bindGetUserInfo (e) {
-    // console.log("处理登陆...")
     //清除缓存
     Taro.clearStorageSync();
-    // console.log(e);
     let userInfo = JSON.parse(e.detail.rawData);
-    // console.log(typeof userInfo);
     return Taro.login({
       success: response => {
         if (response.code)  {
@@ -140,7 +137,6 @@ export default class Mine extends Component {
                           'content-type': 'application/json'
                         },
                         success: registerRes => {
-                          // console.log(registerRes.data.msg);
                           this.setState({
                             userInfos: userInfo
                           });

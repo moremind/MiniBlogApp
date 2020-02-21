@@ -100,7 +100,6 @@ export default class Topics extends Component {
   }
 
   handlerClick = (navPage, id) => {
-    // console.log( "-------->" + JSON.stringify(value) + (id))
     if (navPage.id === id) {
       Taro.navigateTo({
         url: navPage.url + '?pageIndex=' + id + '&origin=' + navPage.origin + '&value=' + navPage.value

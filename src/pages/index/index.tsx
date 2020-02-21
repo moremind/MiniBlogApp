@@ -37,7 +37,6 @@ export default class Index extends Component {
     this.setState({
       value: value
     });
-    console.log(value)
   }
   async onClear () {
     await this.setState({
@@ -54,7 +53,6 @@ export default class Index extends Component {
     await this.setState({
       searchArticles: []
     });
-    console.log(this.state.articles)
   }
   async onActionClick () {
     await this.setState({
@@ -73,7 +71,6 @@ export default class Index extends Component {
 
       }
     });
-    // console.log(this.state.searchArticles.length)
     await this.props.dispatch({
       type: 'home/clean',
       payload: {
