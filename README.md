@@ -18,8 +18,12 @@ npm dev:weapp
 1.打开本地微信小程序工具
 2.打开dist目录运行即可
 ```
+## 小程序码
+![qrcode](qrcode.jpg)
+
 ## 预览
 ![demo](https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/demo1.jpg)
+
 ![demo2](https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/demo2.jpg)
 
 ## 服务端
