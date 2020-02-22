@@ -1,9 +1,25 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import {connect} from "@tarojs/redux";
 
+// @ts-ignore
+@connect(({ copyright }) => ({
+  copyright
+}))
 export default class Index extends Component {
-
+  config = {
+    usingComponents: {
+      wemark: '../../../wemark/wemark',
+    }
+  };
+  constructor (props) {
+    // eslint-disable-next-line prefer-rest-params
+    super(props);
+    this.state = {
+      copyrightContent: '# head'
+    }
+  }
   componentWillMount () {
     Taro.setNavigationBarTitle({
       title: this.$router.params.TitleText,
@@ -13,20 +29,26 @@ export default class Index extends Component {
     }).then(function () {
     });
   }
+  async getList() {
+    await this.props.dispatch({
+      type: 'copyright/load',
+      payload: ''
+    });
 
-  componentDidMount () { }
+    await this.setState({
+      copyrightContent: this.props.copyright.copyright
+    })
+  }
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
+  async componentDidMount() {
+    await this.getList();
+  }
 
   render () {
     return (
       <View className='index'>
-        <Text>1.小程序版本归@hirCodd所有。</Text>
-        <Text>1.小程序版本归@hirCodd所有。</Text>
+        {/*<wemark md={this.state.md} link highlight type='wemark' >{this.state.md}</wemark>*/}
+        <wemark md={this.state.copyrightContent} link highlight type='wemark' />
       </View>
     )
   }

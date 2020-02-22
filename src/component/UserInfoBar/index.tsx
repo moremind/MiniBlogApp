@@ -32,7 +32,7 @@ export default class UserInfoBar extends Component {
               {/*用户名称*/}
               <View className='at-row at-row__justify--center'>
                 <View className='getUser'>
-                  <AtButton openType='getUserInfo' onGetUserInfo={this.props.onClick}>点击登陆</AtButton>
+                  <AtButton openType='getUserInfo' onGetUserInfo={this.props.onClick}>点我登陆</AtButton>
                 </View>
                 {/*<View className='username'>点击登陆</View>*/}
               </View>

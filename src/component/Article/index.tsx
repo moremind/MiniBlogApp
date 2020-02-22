@@ -14,7 +14,11 @@ export default class Article extends Component {
         <View className='at-row'>
           {/*图片*/}
           <View >
-            <Image className='article-thumb' src={"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/blog/home/hero.png"}/>
+            {
+              this.props.thumb == null ?
+                <Image className='article-thumb' src={"https://javanorthapp-1251602255.cos.ap-chengdu.myqcloud.com/weapp/Java.jpg"}/>
+              : <Image className='article-thumb' src={this.props.thumb}/>
+            }
           </View>
           <View className='article-content'>
             {/*标题*/}

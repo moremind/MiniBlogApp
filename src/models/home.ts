@@ -10,7 +10,6 @@ export default {
   },
   reducers: {
     save (state, { payload }) {
-      console.log(payload);
       return { ...state, ...payload };
     },
     clean (state, { payload }) {

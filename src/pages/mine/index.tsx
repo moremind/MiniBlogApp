@@ -82,9 +82,10 @@ export default class Mine extends Component {
     return Taro.checkSession({
       success: function () {
         // session未过期则继续维持登录状态
-        return that.setState({
+        that.setState({
           isLogin: true
         });
+        return that.bindGetUserInfo(e);
       },
       fail: function () {
         // 失败则重新登录
@@ -188,7 +189,7 @@ export default class Mine extends Component {
           <AtList>
             <AtListItem onClick={this.onClickAboutPage} title='关于' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'help' }} />
             <AtListItem onClick={this.onClickCopyrightPage} title='版权说明' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'alert-circle' }} />
-            <AtListItem onClick={this.onClickIssuePage} title='意见与建议' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'message' }} />
+            {/*<AtListItem onClick={this.onClickIssuePage} title='意见与建议' arrow='right' iconInfo={{ size: 24, color: '#74CAFF', value: 'message' }} />*/}
           </AtList>
         </View>
       </View>

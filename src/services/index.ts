@@ -15,6 +15,18 @@ export function getMarkDown() {
   });
 }
 
+export function getAbout() {
+  return Api.get({
+    url: '/mine/about'
+  });
+}
+
+export function getCopyright() {
+  return Api.get({
+    url: '/mine/copyright'
+  });
+}
+
 /**
  * 获取文章
  * @param pageNum

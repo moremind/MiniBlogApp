@@ -67,8 +67,6 @@ export default {
       .then(checkStatus)
       .then(res => {
         return res;
-        // console.log("======>>>>>" + JSON.stringify(checkStatus(res, resolve, reject)))
-        // return checkStatus(res, resolve, reject);
       })
   },
 
@@ -76,7 +74,6 @@ export default {
    * get
    */
   get(options: any) {
-    console.log(JSON.stringify(options));
     return this.request({
       ...options,
     }, 'get');

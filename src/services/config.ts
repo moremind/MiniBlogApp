@@ -77,4 +77,5 @@ export const HTTP_STATUS = {
   NETWORK_CONNECT_TIMEOUT_ERROR: 599
 };
 
-export const BASE_URL = "http://localhost:8090/api";
+// export const BASE_URL = "http://localhost:8090/api";
+export const BASE_URL = "https://weapp.finen.top/api";

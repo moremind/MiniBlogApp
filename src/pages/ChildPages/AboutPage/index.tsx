@@ -18,16 +18,14 @@ export default class Index extends Component {
    */
   config = {
     usingComponents: {
-      wemark: '../../../wemark/wemark',
-      // "towxml": '../../../component/towxml/towxml'
+      wemark: '../../../wemark/wemark'
     }
   };
   constructor (props) {
     // eslint-disable-next-line prefer-rest-params
     super(props);
     this.state = {
-      articles: '# head',
-      md: '# heading\n\nText'
+      aboutContent: '# head'
     }
   }
   componentWillMount () {
@@ -49,44 +47,21 @@ export default class Index extends Component {
     });
 
     await this.setState({
-      articles: this.props.about.article.data
+      aboutContent: this.props.about.about
     })
   }
 
-  componentDidMount() {
-    this.getList();
+  async componentDidMount() {
+    await this.getList();
   }
-
-
-  componentWillUnmount () {
-
-  }
-
-  componentDidShow () {
-
-    // console.log("----->>>>111" + this.state.article)
-  }
-
-  componentDidHide () { }
-
 
   render () {
     return (
       <View>
-        {/*<Text>{JSON.stringify(this.showPage())}</Text>*/}
-        {/*<View>{Marked(this.props.about.article.data.name)}</View>*/}
-        {/*<Text>{this.state.article}</Text>*/}
-        {/*<Text>{this.state}</Text>*/}
         <View className='index'>
           {/*<wemark md={this.state.md} link highlight type='wemark' >{this.state.md}</wemark>*/}
-          <wemark md={this.state.articles.article} link highlight type='wemark' />
+          <wemark md={this.state.aboutContent} link highlight type='wemark' />
         </View>
-        {/*<import src='../../../component/towxml/towxml.wxml' />*/}
-        {/*<template is='nodes'  data='{{...article}}'/>*/}
-        {/*<import src="../../../component/html2wxml/html2wxml.wxml" />*/}
-        {/*<template is='html2wxml' data='{{wxmlData:article}}' />*/}
-        {/*<RichText nodes={'article'}>{this.state.article}</RichText>*/}
-        {/*<RichText nodes={'data'}>{this.showPage()}</RichText>*/}
       </View>
     )
   }

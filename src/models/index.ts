@@ -11,11 +11,13 @@ import home from './home'
 import topic from './topic'
 import topicDetail from "./topicDetail";
 import mine from "./mine";
+import copyright from './copyright'
 //导出所有的model
 export default [
   about,
   home,
   topic,
   topicDetail,
-  mine
+  mine,
+  copyright
 ];

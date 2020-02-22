@@ -59,6 +59,32 @@ class App extends Component {
           selectedIconPath: "assets/icon/mine-selected.png"
         }]
     },
+    subPackages: [
+      // {
+      //   root: 'ChildPages',
+      //   pages: [
+      //     'ArticleDetails'
+      //   ]
+      // },
+      // {
+      //   root: 'pages/topics',
+      //   pages: [
+      //     'pages/ChildPages/ArticleDetails/index',
+      //     'pages/ChildPages/JavaBasicPage/index'
+      //   ]
+      // },
+      // {
+      //   root: 'pages/mine',
+      //   pages: [
+      //     'pages/ChildPages/BrowsePage/index',
+      //     'pages/ChildPages/FavoritePage/index',
+      //     'pages/ChildPages/MyLikePage/index',
+      //     'pages/ChildPages/AboutPage/index',
+      //     'pages/ChildPages/CopyrightPage/index',
+      //     'pages/ChildPages/IssuePage/index',
+      //   ]
+      // }
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

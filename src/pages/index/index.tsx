@@ -64,6 +64,7 @@ export default class Index extends Component {
         keyword: this.state.value
       }
     });
+    //判断是否有重复文章
     await this.props.home.articles.map((article) => {
       if(JSON.stringify(this.state.searchArticles).indexOf(JSON.stringify(article)) === -1){
         this.state.searchArticles.push(article);
@@ -145,6 +146,7 @@ export default class Index extends Component {
                          key={post.articleId}
                          articleId={post.articleId}
                          title={post.title}
+                         thumb={post.thumb}
                          author={post.author}
                          publishTime={post.publishTime}
                 ></Article>
@@ -155,6 +157,7 @@ export default class Index extends Component {
                          key={post.articleId}
                          articleId={post.articleId}
                          title={post.title}
+                         thumb={post.thumb}
                          author={post.author}
                          publishTime={post.publishTime}
                 ></Article>
@@ -167,7 +170,7 @@ export default class Index extends Component {
              className='load-more'
              onClick={this.handleClick.bind(this)}
              status={this.state.status}
-             noMoreText={"没有更多了"}
+             noMoreText={"真的一篇都没有了..."}
            />
          </View>
       </View>
