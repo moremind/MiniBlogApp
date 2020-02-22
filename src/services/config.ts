@@ -78,4 +78,4 @@ export const HTTP_STATUS = {
 };
 
 // export const BASE_URL = "http://localhost:8090/api";
-export const BASE_URL = "https://weapp.finen.top/api";
+export const BASE_URL = "https://xxxxxx/api";
