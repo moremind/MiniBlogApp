@@ -1,8 +1,8 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "./",
   "projectname": "JavaNorthMiniApp",
   "description": "Java 开发者之家",
-  "appid": "wxb27ac135346a05ef",
+  "appid": "touristappid",
   "setting": {
     "urlCheck": true,
     "es6": false,
