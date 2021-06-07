@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-18 12:27:39
- * @LastEditTime: 2021-06-01 12:31:52
+ * @LastEditTime: 2021-06-07 23:57:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \JavaNorthMiniApp\src\app.ts
@@ -19,6 +19,7 @@ import "taro-ui-vue3/dist/style/components/icon.scss";
 import "taro-ui-vue3/dist/style/components/grid.scss";
 import "taro-ui-vue3/dist/style/components/list.scss";
 import "taro-ui-vue3/dist/style/components/divider.scss";
+import "taro-ui-vue3/dist/style/components/button.scss";
 const App = createApp({
   onShow (options) {},
   // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖

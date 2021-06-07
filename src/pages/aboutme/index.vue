@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-05-20 00:18:44
- * @LastEditTime: 2021-06-01 22:21:12
+ * @LastEditTime: 2021-06-07 23:57:00
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \JavaNorthMiniApp\src\pages\aboutme\index.vue
 -->
 <template>
   <view class="user-info-bar">
-    <UserInfoBar/>
+    <UserInfoBar :weChatUserLogin="weChatUserLogin" :isLogined="isLogined" @click="weChatUserLogin(event)"/>
   </view>
   <view class="faq">
     <AtList>
@@ -34,9 +34,28 @@ export default {
     AtListItem,
     AtDivider,
   },
+  data() {
+    return {
+      isLogined: false, // 登陆状态
+    }
+  },
   setup() {
     
   },
+  methods: {
+    weChatUserLogin(event){
+      // wechat 登陆逻辑
+      // 1.获取用户授权wx.authorize，授权能够拿到scope.userInfo
+      // 2.checkSession session=>保持 no-session=>wechat login(wx.login)
+      // 3.调用 wx.login 能够拿到当前小程序的唯一标识（openid）、微信开放平台帐号下的唯一标识（unionid，若当前小程序已绑定到微信开放平台帐号）及本次登录的会话密钥（session_key）
+      // 4.调用微信小程序wx.getUserInfo拿到用户数据存存储于数据库，如果用户数据库已经存在则直接更新页面状态即可
+      // 最终目的：拿到用户登陆信息存储至数据库
+
+      this.isLogined = true;
+      console.log("登陆")
+      console.log(this.isLogined)
+    }
+  }
 }
 </script>
 
