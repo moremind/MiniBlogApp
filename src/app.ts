@@ -1,11 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2021-05-18 12:27:39
- * @LastEditTime: 2021-06-07 23:57:19
+ * @LastEditTime: 2021-06-08 00:14:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \JavaNorthMiniApp\src\app.ts
  */
+import Taro from '@tarojs/taro'
 import { createApp } from 'vue'
 import { createUI } from 'taro-ui-vue3'
 import store from './store'
@@ -27,6 +28,6 @@ const App = createApp({
 
 const TaroVueUI = createUI();
 
-App.use(store, TaroVueUI);
+App.use(store, TaroVueUI, Taro);
 
 export default App
